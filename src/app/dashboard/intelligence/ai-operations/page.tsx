@@ -18,8 +18,8 @@ export default async function IntelligenceAIOperationsPage() {
         </h1>
         <p className="mt-2 text-sm text-[var(--muted)]">
           Observational feedback on assistance, suggestions, recommendations,
-          and tasks. Unknown relationships stay unknown. Nothing here changes
-          prompts, scores, or canonical content.
+          tasks, and human evaluation. Unknown relationships stay unknown.
+          Nothing here changes prompts, scores, or canonical content.
         </p>
       </div>
 

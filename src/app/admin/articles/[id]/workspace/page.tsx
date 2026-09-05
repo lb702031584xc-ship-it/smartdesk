@@ -21,6 +21,7 @@ import { getEditorialWorkflowRoles } from "@/lib/admin/auth-config";
 import { getSuggestionsForEntity } from "@/lib/ai-suggestions";
 import { getEntityRecommendations } from "@/lib/ai-recommendation-resolver";
 import { getAssistanceForEntity } from "@/lib/ai-assistance";
+import { getFeedbackForAssistance } from "@/lib/ai-feedback";
 import { buildWorkspaceAIContext } from "@/lib/ai-context";
 import { getEntityOperationalSummary } from "@/lib/ai-operational-intelligence";
 import { getEntityTasks } from "@/lib/editorial-tasks";
@@ -28,6 +29,7 @@ import { listAdminArticleIds } from "@/lib/admin";
 import { buildContentEditorViewModel } from "@/lib/content-editor";
 import { getEditorialWorkspace } from "@/lib/editorial-workspace";
 import { getWorkflowStatus } from "@/lib/editorial-workflow";
+import type { AIAssistanceFeedbackViewModel } from "@/types/ai-feedback";
 
 type PageProps = {
   params: Promise<{ id: string }>;
@@ -70,6 +72,15 @@ export default async function AdminArticleWorkspacePage({ params }: PageProps) {
   const { email } = await requireAdmin();
   const workflow = (await getWorkflowStatus("article", id)) ?? null;
 
+  const feedbackByAssistanceId: Record<string, AIAssistanceFeedbackViewModel> =
+    {};
+  await Promise.all(
+    assistance.map(async (item) => {
+      const fb = await getFeedbackForAssistance(item.id);
+      if (fb) feedbackByAssistanceId[item.id] = fb;
+    }),
+  );
+
   return (
     <EditorialWorkspaceShell
       entityType="article"
@@ -88,6 +99,7 @@ export default async function AdminArticleWorkspacePage({ params }: PageProps) {
         entityType="article"
         entityId={id}
         items={assistance}
+        feedbackByAssistanceId={feedbackByAssistanceId}
       />
       <EditorialTaskEntityPanel
         tasks={tasks}

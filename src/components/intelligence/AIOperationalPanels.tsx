@@ -1,11 +1,12 @@
+import type { AIOperationalOverviewWithEvaluation } from "@/lib/ai-operational-intelligence";
 import type {
-  AIOperationalOverview,
   AIOutcomeViewModel,
   AssistanceTypePerformance,
   EntityAIOutcomeSummary,
   RecommendationOutcomeViewModel,
   SuggestionOutcomeViewModel,
 } from "@/types/ai-outcome";
+import type { AIEvaluationMetricsViewModel } from "@/types/ai-feedback";
 import {
   IntelligenceSection,
   SignalBadge,
@@ -77,9 +78,10 @@ function ProvenanceLine({ outcome }: { outcome: AIOutcomeViewModel }) {
 export function AIOperationalDashboardPanel({
   overview,
 }: {
-  overview: AIOperationalOverview;
+  overview: AIOperationalOverviewWithEvaluation;
 }) {
-  const { metrics, recommendationMetrics, suggestionMetrics } = overview;
+  const { metrics, recommendationMetrics, suggestionMetrics, evaluation } =
+    overview;
 
   return (
     <div className="space-y-6">
@@ -100,6 +102,8 @@ export function AIOperationalDashboardPanel({
           ]}
         />
       </IntelligenceSection>
+
+      <AIEvaluationPanel evaluation={evaluation} />
 
       <IntelligenceSection
         title="Downstream Conversion"
@@ -192,6 +196,123 @@ export function AIOperationalDashboardPanel({
         />
       </IntelligenceSection>
     </div>
+  );
+}
+
+function AIEvaluationPanel({
+  evaluation,
+}: {
+  evaluation: AIEvaluationMetricsViewModel;
+}) {
+  return (
+    <IntelligenceSection
+      title="Human Evaluation (Phase 45)"
+      description="Structured feedback on AI assistance. Evaluation ≠ learning. No-feedback ≠ rejected."
+    >
+      <MetricGrid
+        items={[
+          {
+            label: "Eligible assistances",
+            value: evaluation.eligibleAssistanceCount,
+          },
+          { label: "Feedback count", value: evaluation.feedbackCount },
+          {
+            label: "Coverage rate",
+            value: pct(evaluation.feedbackCoverageRate),
+          },
+          { label: "No feedback", value: evaluation.noFeedbackCount },
+          {
+            label: "Accepted as-is rate",
+            value: pct(evaluation.acceptedAsIsRate),
+          },
+          {
+            label: "Accepted w/ edits rate",
+            value: pct(evaluation.acceptedWithEditsRate),
+          },
+          { label: "Rejection rate", value: pct(evaluation.rejectionRate) },
+          {
+            label: "Not-actionable rate",
+            value: pct(evaluation.notActionableRate),
+          },
+        ]}
+      />
+      <p className="mt-3 text-xs text-[var(--subtle)]">
+        Coverage = feedback / eligible (accepted|rejected). Disposition rates
+        use feedback count as denominator.
+      </p>
+
+      <div className="mt-4 overflow-x-auto">
+        <p className="mb-2 text-xs font-semibold uppercase text-[var(--subtle)]">
+          By assistance type
+        </p>
+        <table className="w-full min-w-[32rem] text-left text-sm">
+          <thead className="text-xs uppercase tracking-wide text-[var(--subtle)]">
+            <tr>
+              <th className="py-2 pr-3 font-semibold">Type</th>
+              <th className="py-2 pr-3 font-semibold">Feedback</th>
+              <th className="py-2 pr-3 font-semibold">As-is</th>
+              <th className="py-2 pr-3 font-semibold">With edits</th>
+              <th className="py-2 pr-3 font-semibold">Rejected</th>
+              <th className="py-2 font-semibold">Not actionable</th>
+            </tr>
+          </thead>
+          <tbody>
+            {evaluation.byAssistanceType.map((row) => (
+              <tr
+                key={row.assistanceType}
+                className="border-t border-[var(--line)]"
+              >
+                <td className="py-2 pr-3">{row.assistanceType}</td>
+                <td className="py-2 pr-3">{row.feedbackCount}</td>
+                <td className="py-2 pr-3">{row.acceptedAsIs}</td>
+                <td className="py-2 pr-3">{row.acceptedWithEdits}</td>
+                <td className="py-2 pr-3">{row.rejected}</td>
+                <td className="py-2">{row.notActionable}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="mt-4">
+        <p className="mb-2 text-xs font-semibold uppercase text-[var(--subtle)]">
+          By reason
+        </p>
+        {evaluation.byReason.length === 0 ? (
+          <p className="text-sm text-[var(--muted)]">No feedback reasons yet.</p>
+        ) : (
+          <ul className="flex flex-wrap gap-2">
+            {evaluation.byReason.map((row) => (
+              <li key={row.reason}>
+                <SignalBadge label={`${row.reason}: ${row.count}`} />
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+
+      <div className="mt-4">
+        <p className="mb-2 text-xs font-semibold uppercase text-[var(--subtle)]">
+          Feedback ↔ outcome (explicit links only)
+        </p>
+        {evaluation.outcomeJoins.length === 0 ? (
+          <p className="text-sm text-[var(--muted)]">No joins yet.</p>
+        ) : (
+          <ul className="space-y-1 text-xs text-[var(--muted)]">
+            {evaluation.outcomeJoins.slice(0, 16).map((row) => (
+              <li key={row.assistanceId}>
+                {row.disposition} → outcome:{row.outcome} · linkage:
+                {row.linkage}
+                {row.suggestionId
+                  ? ` · sug:${row.suggestionId.slice(0, 8)}`
+                  : ""}
+                {row.taskId ? ` · task:${row.taskId.slice(0, 8)}` : ""}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </IntelligenceSection>
   );
 }
 

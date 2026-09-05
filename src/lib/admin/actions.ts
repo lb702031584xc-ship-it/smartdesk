@@ -456,6 +456,39 @@ export async function markAIAssistanceReviewedAction(
   return { success: true };
 }
 
+/**
+ * Phase 45 — structured human feedback (evaluation only; no content mutation).
+ */
+export async function submitAIAssistanceFeedbackAction(input: {
+  assistanceId: string;
+  disposition: string;
+  reason: string;
+  note?: string | null;
+}): Promise<AIAssistanceActionResult> {
+  let actor: string;
+  try {
+    ({ email: actor } = await requireAdmin());
+  } catch {
+    return assistanceSessionExpired();
+  }
+  const { submitAssistanceFeedback } = await import("@/lib/ai-feedback");
+  const result = await submitAssistanceFeedback({
+    assistanceId: input.assistanceId,
+    disposition: input.disposition,
+    reason: input.reason,
+    note: input.note ?? null,
+    actor,
+  });
+  if (!result.success) {
+    return {
+      success: false,
+      error: result.error,
+      message: result.message,
+    };
+  }
+  return { success: true };
+}
+
 function workflowSessionExpired(): WorkflowResult {
   return {
     success: false,

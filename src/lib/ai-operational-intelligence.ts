@@ -1,5 +1,5 @@
 /**
- * AI Operational Intelligence read model (Phase 44).
+ * AI Operational Intelligence read model (Phase 44 + Phase 45 evaluation).
  *
  * Observational only. Does not change prompts, scores, priorities,
  * suggestions, tasks, or canonical content.
@@ -16,6 +16,7 @@ import {
   buildAssistanceTypePerformance,
 } from "@/lib/ai-outcomes";
 import { listAllAIAssistance } from "@/lib/ai-assistance-store";
+import { getAIEvaluationMetrics } from "@/lib/ai-feedback";
 import type {
   AIOperationalOverview,
   AssistanceTypePerformance,
@@ -24,18 +25,34 @@ import type {
   SuggestionOutcomeViewModel,
 } from "@/types/ai-outcome";
 import type { AIOutcomeEntityType } from "@/types/ai-outcome";
+import type { AIEvaluationMetricsViewModel } from "@/types/ai-feedback";
+
+export type AIOperationalOverviewWithEvaluation = AIOperationalOverview & {
+  evaluation: AIEvaluationMetricsViewModel;
+};
 
 export async function getAIOperationalOverview(
   limit = 120,
-): Promise<AIOperationalOverview> {
-  const [metrics, recentOutcomes, suggestionOutcomes, liveRecs] =
+): Promise<AIOperationalOverviewWithEvaluation> {
+  const [metrics, recentOutcomes, suggestionOutcomes, liveRecs, evaluation] =
     await Promise.all([
       getAIOutcomeSummary(limit),
       getAIOutcomes(limit),
       getSuggestionOutcomes(limit),
       isDatabaseContentStore()
-        ? buildAllRecommendations().catch(() => ({ items: [] as Array<{ id: string; priority: "high" | "medium" | "low" }> }))
-        : Promise.resolve({ items: [] as Array<{ id: string; priority: "high" | "medium" | "low" }> }),
+        ? buildAllRecommendations().catch(() => ({
+            items: [] as Array<{
+              id: string;
+              priority: "high" | "medium" | "low";
+            }>,
+          }))
+        : Promise.resolve({
+            items: [] as Array<{
+              id: string;
+              priority: "high" | "medium" | "low";
+            }>,
+          }),
+      getAIEvaluationMetrics(limit),
     ]);
 
   const recommendationConversions = await getRecommendationTaskOutcomes(
@@ -84,6 +101,7 @@ export async function getAIOperationalOverview(
         (s) => s.outcome === "accepted-advisory",
       ).length,
     },
+    evaluation,
   };
 }
 
@@ -107,8 +125,18 @@ export async function getRecommendationConversionMetrics(
   notConverted: number;
 }> {
   const live = isDatabaseContentStore()
-    ? await buildAllRecommendations().catch(() => ({ items: [] as Array<{ id: string; priority: "high" | "medium" | "low" }> }))
-    : { items: [] as Array<{ id: string; priority: "high" | "medium" | "low" }> };
+    ? await buildAllRecommendations().catch(() => ({
+        items: [] as Array<{
+          id: string;
+          priority: "high" | "medium" | "low";
+        }>,
+      }))
+    : {
+        items: [] as Array<{
+          id: string;
+          priority: "high" | "medium" | "low";
+        }>,
+      };
 
   const items = await getRecommendationTaskOutcomes(
     live.items.map((r) => ({ id: r.id, priority: r.priority })),

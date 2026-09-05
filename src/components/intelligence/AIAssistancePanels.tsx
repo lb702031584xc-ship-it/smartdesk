@@ -8,6 +8,7 @@ import {
   generateAIAssistanceAction,
   markAIAssistanceReviewedAction,
   rejectAIAssistanceAction,
+  submitAIAssistanceFeedbackAction,
 } from "@/lib/admin/actions";
 import { editorialWorkspaceHref } from "@/lib/editorial-workspace-links";
 import type { AIContextViewModel } from "@/types/ai-context";
@@ -16,6 +17,14 @@ import type {
   AIAssistanceType,
   AIAssistanceViewModel,
 } from "@/types/ai-assistance";
+import type {
+  AIAssistanceFeedbackViewModel,
+  AIFeedbackDisposition,
+  AIFeedbackReason,
+} from "@/types/ai-feedback";
+import {
+  AI_FEEDBACK_REASONS,
+} from "@/types/ai-feedback";
 import {
   IntelligenceEmptyState,
   IntelligenceSection,
@@ -41,14 +50,17 @@ function statusTone(
 function AssistanceCard({
   item,
   showEntityLink,
+  feedback,
 }: {
   item: AIAssistanceViewModel;
   showEntityLink?: boolean;
+  feedback?: AIAssistanceFeedbackViewModel | null;
 }) {
   const router = useRouter();
   const [pending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
   const open = item.status === "draft" || item.status === "reviewed";
+  const terminal = item.status === "accepted" || item.status === "rejected";
   const href = editorialWorkspaceHref(item.entityType, item.entityId);
 
   function run(
@@ -87,6 +99,11 @@ function AssistanceCard({
         <div className="flex flex-wrap gap-2">
           <SignalBadge label={TYPE_LABELS[item.type]} tone="neutral" />
           <SignalBadge label={item.status} tone={statusTone(item.status)} />
+          {feedback ? (
+            <SignalBadge label={feedback.disposition} tone="ok" />
+          ) : terminal ? (
+            <SignalBadge label="no feedback" tone="warn" />
+          ) : null}
         </div>
       </div>
       <p className="mt-2 text-sm text-[var(--muted)]">
@@ -146,8 +163,132 @@ function AssistanceCard({
           </button>
         </div>
       ) : null}
+      {terminal ? (
+        <AssistanceFeedbackForm
+          assistanceId={item.id}
+          status={item.status as "accepted" | "rejected"}
+          existing={feedback ?? null}
+        />
+      ) : null}
       {error ? <p className="mt-2 text-sm text-red-900">{error}</p> : null}
     </li>
+  );
+}
+
+function AssistanceFeedbackForm({
+  assistanceId,
+  status,
+  existing,
+}: {
+  assistanceId: string;
+  status: "accepted" | "rejected";
+  existing: AIAssistanceFeedbackViewModel | null;
+}) {
+  const router = useRouter();
+  const [pending, startTransition] = useTransition();
+  const [error, setError] = useState<string | null>(null);
+  const allowedDispositions: AIFeedbackDisposition[] =
+    status === "accepted"
+      ? ["accepted-as-is", "accepted-with-edits"]
+      : ["rejected", "not-actionable"];
+  const [disposition, setDisposition] = useState<AIFeedbackDisposition>(
+    existing?.disposition && allowedDispositions.includes(existing.disposition)
+      ? existing.disposition
+      : allowedDispositions[0]!,
+  );
+  const [reason, setReason] = useState<AIFeedbackReason>(
+    existing?.reason ?? "useful-but-needs-editing",
+  );
+  const [note, setNote] = useState(existing?.note ?? "");
+
+  return (
+    <div className="mt-3 rounded-md bg-[var(--canvas)] px-3 py-3 ring-1 ring-[var(--line)]">
+      <p className="text-xs font-semibold uppercase tracking-wide text-[var(--subtle)]">
+        Human evaluation
+      </p>
+      <p className="mt-1 text-xs text-[var(--muted)]">
+        Evaluation only — does not change content, prompts, or scores. Must
+        match assistance status ({status}).
+      </p>
+      {existing ? (
+        <p className="mt-2 text-xs text-[var(--subtle)]">
+          Current: {existing.disposition} · {existing.reason}
+          {existing.note ? ` · “${existing.note}”` : ""}
+        </p>
+      ) : (
+        <p className="mt-2 text-xs text-[var(--subtle)]">
+          No feedback yet (not the same as rejected).
+        </p>
+      )}
+      <div className="mt-3 grid gap-2 sm:grid-cols-2">
+        <label className="text-xs text-[var(--muted)]">
+          Disposition
+          <select
+            className="mt-1 w-full rounded-md border border-[var(--line)] bg-white px-2 py-1.5 text-sm text-[var(--ink)]"
+            value={disposition}
+            onChange={(e) =>
+              setDisposition(e.target.value as AIFeedbackDisposition)
+            }
+            disabled={pending}
+          >
+            {allowedDispositions.map((d) => (
+              <option key={d} value={d}>
+                {d}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className="text-xs text-[var(--muted)]">
+          Reason
+          <select
+            className="mt-1 w-full rounded-md border border-[var(--line)] bg-white px-2 py-1.5 text-sm text-[var(--ink)]"
+            value={reason}
+            onChange={(e) => setReason(e.target.value as AIFeedbackReason)}
+            disabled={pending}
+          >
+            {AI_FEEDBACK_REASONS.map((r) => (
+              <option key={r} value={r}>
+                {r}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <label className="mt-2 block text-xs text-[var(--muted)]">
+        Note {reason === "other" ? "(required for other)" : "(optional)"}
+        <textarea
+          className="mt-1 w-full rounded-md border border-[var(--line)] bg-white px-2 py-1.5 text-sm text-[var(--ink)]"
+          rows={2}
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+          disabled={pending}
+        />
+      </label>
+      <button
+        type="button"
+        disabled={pending}
+        className="mt-2 rounded-md bg-[var(--ink)] px-3 py-1.5 text-sm font-medium text-white disabled:opacity-50"
+        onClick={() => {
+          setError(null);
+          startTransition(async () => {
+            const result = await submitAIAssistanceFeedbackAction({
+              assistanceId,
+              disposition,
+              reason,
+              note,
+            });
+            if (!result.success) {
+              setError(`${result.error}: ${result.message}`);
+              return;
+            }
+            router.refresh();
+          });
+        }}
+      >
+        {existing ? "Update feedback" : "Save feedback"}
+      </button>
+      {error ? <p className="mt-2 text-sm text-red-900">{error}</p> : null}
+    </div>
   );
 }
 
@@ -218,10 +359,12 @@ export function AIAssistanceEntityPanel({
   entityType,
   entityId,
   items,
+  feedbackByAssistanceId = {},
 }: {
   entityType: "product" | "article";
   entityId: string;
   items: AIAssistanceViewModel[];
+  feedbackByAssistanceId?: Record<string, AIAssistanceFeedbackViewModel>;
 }) {
   const router = useRouter();
   const [pending, startTransition] = useTransition();
@@ -257,7 +400,7 @@ export function AIAssistanceEntityPanel({
   return (
     <IntelligenceSection
       title="AI assistance"
-      description="Drafts only. Accept creates a suggestion or task — never writes canonical content."
+      description="Drafts only. Accept creates a suggestion or task — never writes canonical content. Feedback is evaluation only."
     >
       <div className="mb-3 flex flex-wrap gap-2">
         {types.map((type) => (
@@ -277,21 +420,26 @@ export function AIAssistanceEntityPanel({
       ) : (
         <ul className="space-y-3">
           {open.map((item) => (
-            <AssistanceCard key={item.id} item={item} />
+            <AssistanceCard
+              key={item.id}
+              item={item}
+              feedback={feedbackByAssistanceId[item.id] ?? null}
+            />
           ))}
         </ul>
       )}
       {history.length > 0 ? (
         <div className="mt-4 border-t border-[var(--line)] pt-4">
           <p className="mb-2 text-xs font-medium uppercase text-[var(--subtle)]">
-            History
+            History + evaluation
           </p>
-          <ul className="space-y-2 text-sm text-[var(--muted)]">
+          <ul className="space-y-3">
             {history.map((item) => (
-              <li key={item.id}>
-                {item.status} · {TYPE_LABELS[item.type]} ·{" "}
-                {item.draft?.title ?? item.id.slice(0, 8)}
-              </li>
+              <AssistanceCard
+                key={item.id}
+                item={item}
+                feedback={feedbackByAssistanceId[item.id] ?? null}
+              />
             ))}
           </ul>
         </div>
@@ -303,8 +451,10 @@ export function AIAssistanceEntityPanel({
 
 export function AIAssistanceQueuePanel({
   queue,
+  feedbackByAssistanceId = {},
 }: {
   queue: AIAssistanceQueueViewModel;
+  feedbackByAssistanceId?: Record<string, AIAssistanceFeedbackViewModel>;
 }) {
   if (queue.items.length === 0) {
     return (
@@ -314,10 +464,14 @@ export function AIAssistanceQueuePanel({
     );
   }
 
+  const history = queue.items.filter(
+    (i) => i.status === "accepted" || i.status === "rejected",
+  );
+
   return (
     <IntelligenceSection
       title="AI assistance"
-      description={`${queue.pendingReview.length} pending review. Accept routes to suggestion or task.`}
+      description={`${queue.pendingReview.length} pending review. Accept routes to suggestion or task. Feedback is separate evaluation.`}
     >
       <div className="mb-4 flex flex-wrap gap-2">
         <SignalBadge label={`Draft ${queue.draftCount}`} tone="neutral" />
@@ -328,27 +482,34 @@ export function AIAssistanceQueuePanel({
       {queue.pendingReview.length > 0 ? (
         <ul className="space-y-3">
           {queue.pendingReview.map((item) => (
-            <AssistanceCard key={item.id} item={item} showEntityLink />
+            <AssistanceCard
+              key={item.id}
+              item={item}
+              showEntityLink
+              feedback={feedbackByAssistanceId[item.id] ?? null}
+            />
           ))}
         </ul>
       ) : (
         <p className="text-sm text-[var(--muted)]">No pending reviews.</p>
       )}
-      <div className="mt-6 border-t border-[var(--line)] pt-4">
-        <p className="mb-2 text-xs font-medium uppercase text-[var(--subtle)]">
-          Recent history
-        </p>
-        <ul className="space-y-2 text-sm text-[var(--muted)]">
-          {queue.items
-            .filter((i) => i.status === "accepted" || i.status === "rejected")
-            .slice(0, 12)
-            .map((item) => (
-              <li key={item.id}>
-                {item.status} · {item.entityName} · {TYPE_LABELS[item.type]}
-              </li>
+      {history.length > 0 ? (
+        <div className="mt-6 border-t border-[var(--line)] pt-4">
+          <p className="mb-2 text-xs font-medium uppercase text-[var(--subtle)]">
+            Recent history + evaluation
+          </p>
+          <ul className="space-y-3">
+            {history.slice(0, 12).map((item) => (
+              <AssistanceCard
+                key={item.id}
+                item={item}
+                showEntityLink
+                feedback={feedbackByAssistanceId[item.id] ?? null}
+              />
             ))}
-        </ul>
-      </div>
+          </ul>
+        </div>
+      ) : null}
     </IntelligenceSection>
   );
 }

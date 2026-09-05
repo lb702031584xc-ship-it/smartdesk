@@ -22,6 +22,34 @@
       "when": 1787105000000,
       "tag": "0002_editorial_workflow",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1787110000000,
+      "tag": "0003_ai_suggestions",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1787115000000,
+      "tag": "0004_editorial_tasks",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1787120000000,
+      "tag": "0005_ai_assistance_outputs",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1787125000000,
+      "tag": "0006_ai_assistance_feedback",
+      "breakpoints": true
     }
   ]
 }

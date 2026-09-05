@@ -248,3 +248,62 @@ export const aiAssistanceOutputs = pgTable(
 );
 
 export type AIAssistanceOutputRow = typeof aiAssistanceOutputs.$inferSelect;
+
+/**
+ * Phase 45 — structured human feedback on AI assistance (evaluation only).
+ * Does not mutate ProductV1 / ArticleV1 / prompts / scores.
+ */
+export const aiAssistanceFeedback = pgTable(
+  "ai_assistance_feedback",
+  {
+    id: text("id").primaryKey(),
+    assistanceId: text("assistance_id").notNull().unique(),
+    disposition: text("disposition").notNull(),
+    reason: text("reason").notNull(),
+    note: text("note"),
+    createdBy: text("created_by").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    updatedBy: text("updated_by"),
+    updatedAt: timestamp("updated_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    index("ai_assistance_feedback_disposition_idx").on(table.disposition),
+    index("ai_assistance_feedback_reason_idx").on(table.reason),
+    index("ai_assistance_feedback_created_at_idx").on(table.createdAt),
+  ],
+);
+
+export type AIAssistanceFeedbackRow = typeof aiAssistanceFeedback.$inferSelect;
+
+export const aiAssistanceFeedbackEvents = pgTable(
+  "ai_assistance_feedback_events",
+  {
+    id: text("id").primaryKey(),
+    feedbackId: text("feedback_id").notNull(),
+    assistanceId: text("assistance_id").notNull(),
+    actor: text("actor").notNull(),
+    action: text("action").notNull(),
+    previousDisposition: text("previous_disposition"),
+    previousReason: text("previous_reason"),
+    newDisposition: text("new_disposition").notNull(),
+    newReason: text("new_reason").notNull(),
+    note: text("note"),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    index("ai_assistance_feedback_events_feedback_idx").on(table.feedbackId),
+    index("ai_assistance_feedback_events_assistance_idx").on(
+      table.assistanceId,
+    ),
+    index("ai_assistance_feedback_events_created_at_idx").on(table.createdAt),
+  ],
+);
+
+export type AIAssistanceFeedbackEventRow =
+  typeof aiAssistanceFeedbackEvents.$inferSelect;
