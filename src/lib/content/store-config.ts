@@ -22,6 +22,17 @@ export function isDatabaseContentStore(): boolean {
   return getContentStoreMode() === "database" && Boolean(process.env.DATABASE_URL?.trim());
 }
 
+/**
+ * Whether public/content reads should hit Neon.
+ * During `next build` (SSG), prefer the repo filesystem so Vercel does not need a live DB
+ * connection while collecting page data. Runtime still uses Neon when configured.
+ */
+export function preferDatabaseContentReads(): boolean {
+  if (!isDatabaseContentStore()) return false;
+  if (process.env.NEXT_PHASE === "phase-production-build") return false;
+  return true;
+}
+
 export function requireDatabaseContentStore(): void {
   if (!isDatabaseContentStore()) {
     throw new Error(

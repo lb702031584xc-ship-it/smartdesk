@@ -1,5 +1,5 @@
 import { cache } from "react";
-import { isDatabaseContentStore } from "./store-config";
+import { isDatabaseContentStore, preferDatabaseContentReads } from "./store-config";
 import {
   getFilesystemProductV1,
   listFilesystemProductIds,
@@ -24,21 +24,21 @@ export type ProductV1Record = {
 };
 
 const loadAllProductsV1 = cache(async (): Promise<ProductV1Document[]> => {
-  if (isDatabaseContentStore()) {
+  if (preferDatabaseContentReads()) {
     return await listDatabaseProductsV1();
   }
   return listFilesystemProductsV1();
 });
 
 export async function listProductV1Ids(): Promise<string[]> {
-  if (isDatabaseContentStore()) {
+  if (preferDatabaseContentReads()) {
     return await listDatabaseProductIds();
   }
   return listFilesystemProductIds();
 }
 
 export async function getProductV1(id: string): Promise<ProductV1Record | undefined> {
-  if (isDatabaseContentStore()) {
+  if (preferDatabaseContentReads()) {
     return await getDatabaseProductV1(id);
   }
   return getFilesystemProductV1(id);

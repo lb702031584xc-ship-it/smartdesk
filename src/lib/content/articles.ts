@@ -1,5 +1,5 @@
 import { cache } from "react";
-import { isDatabaseContentStore } from "./store-config";
+import { isDatabaseContentStore, preferDatabaseContentReads } from "./store-config";
 import {
   getFilesystemArticleV1,
   getFilesystemPublishedSlugs,
@@ -28,28 +28,28 @@ export type ArticleV1Record = {
 };
 
 const loadAllArticlesV1 = cache(async (): Promise<ArticleV1[]> => {
-  if (isDatabaseContentStore()) {
+  if (preferDatabaseContentReads()) {
     return await listDatabaseArticlesV1();
   }
   return listFilesystemArticlesV1();
 });
 
 export async function listArticleV1Ids(): Promise<string[]> {
-  if (isDatabaseContentStore()) {
+  if (preferDatabaseContentReads()) {
     return await listDatabaseArticleIds();
   }
   return listFilesystemArticleIds();
 }
 
 export async function getArticleV1(id: string): Promise<ArticleV1Record | undefined> {
-  if (isDatabaseContentStore()) {
+  if (preferDatabaseContentReads()) {
     return await getDatabaseArticleV1(id);
   }
   return getFilesystemArticleV1(id);
 }
 
 export async function getArticleV1BySlug(slug: string): Promise<ArticleV1Record | undefined> {
-  if (isDatabaseContentStore()) {
+  if (preferDatabaseContentReads()) {
     return await getDatabaseArticleV1BySlug(slug);
   }
   return getFilesystemArticleV1(slug);
@@ -60,7 +60,7 @@ export async function listArticlesV1(): Promise<ArticleV1[]> {
 }
 
 export async function listPublishedArticleSlugs(): Promise<string[]> {
-  if (isDatabaseContentStore()) {
+  if (preferDatabaseContentReads()) {
     return await listDatabasePublishedSlugs();
   }
   return getFilesystemPublishedSlugs();
