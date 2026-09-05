@@ -4,6 +4,7 @@ import { compare } from "bcryptjs";
 import { isAllowedAdminEmail } from "@/lib/admin/auth-config";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  trustHost: true,
   pages: {
     signIn: "/admin/login",
   },

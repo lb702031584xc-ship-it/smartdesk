@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 import { isAllowedAdminEmail, isAuthConfigured } from "@/lib/admin/auth-config";
 import { AdminShell } from "@/components/admin/AdminShell";
@@ -15,6 +14,12 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Auth gate for /admin.
+ * Do NOT redirect unauthenticated users to /admin/login here — the login page is
+ * nested under this layout, and that redirect caused ERR_TOO_MANY_REDIRECTS.
+ * Middleware already protects non-login /admin routes.
+ */
 export default async function AdminLayout({ children }: { children: ReactNode }) {
   if (!isAuthConfigured()) {
     return (
@@ -31,9 +36,12 @@ export default async function AdminLayout({ children }: { children: ReactNode })
   }
 
   const session = await auth();
+  const allowed =
+    Boolean(session?.user?.email) &&
+    isAllowedAdminEmail(session!.user!.email!);
 
-  if (!session?.user?.email || !isAllowedAdminEmail(session.user.email)) {
-    redirect("/admin/login");
+  if (!allowed) {
+    return <>{children}</>;
   }
 
   return <AdminShell>{children}</AdminShell>;
