@@ -48,11 +48,13 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   ],
   callbacks: {
     authorized({ auth: session, request }) {
-      const isAdmin = request.nextUrl.pathname.startsWith("/admin");
-      const isLoginPage = request.nextUrl.pathname === "/admin/login";
+      const pathname = request.nextUrl.pathname;
+      const isLoginPage = pathname === "/admin/login";
+      const isProtected =
+        pathname.startsWith("/admin") || pathname.startsWith("/dashboard");
 
       if (isLoginPage) return true;
-      if (isAdmin) return Boolean(session?.user);
+      if (isProtected) return Boolean(session?.user);
       return true;
     },
   },

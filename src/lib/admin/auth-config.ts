@@ -19,7 +19,7 @@ export function getAdminEmails(): string[] {
  * When empty, every admin email is both editor and reviewer (solo-operator mode).
  */
 export function getAdminReviewerEmails(): string[] {
-  const raw = process.env.ADMIN_REVIEWER_EMAILS ?? "";
+  const raw = normalizeEnvValue(process.env.ADMIN_REVIEWER_EMAILS) ?? "";
   return raw
     .split(",")
     .map((e) => e.trim().toLowerCase())
