@@ -1,0 +1,174 @@
+{
+  "identity": {
+    "id": "standing-desk-vs-writing-desk",
+    "title": "Standing Desk vs Writing Desk for Small Rooms",
+    "slug": "standing-desk-vs-writing-desk"
+  },
+  "classification": {
+    "type": "comparison",
+    "category": "desks",
+    "tags": [
+      "comparison",
+      "standing desk",
+      "writing desk",
+      "small room",
+      "apartment office"
+    ]
+  },
+  "editorial": {
+    "summary": "In a small room, apartment, or studio, the better desk is the one that protects your walkway, matches your workday, and still feels like furniture you can live with.",
+    "intent": "commercial"
+  },
+  "seo": {
+    "metaDescription": "Standing desk vs writing desk for small rooms, apartments, and studio offices—compare footprint, comfort, and budget so you can choose the right desk for a tight home workspace.",
+    "noindex": false
+  },
+  "products": {
+    "primary": [
+      {
+        "productId": "flexispot-compact",
+        "role": "Best for all-day work",
+        "summary": "Best when you sit and stand across a long day and can spare a bit more budget."
+      },
+      {
+        "productId": "bamboo-writing-desk",
+        "role": "Best simple setup",
+        "summary": "Best when the desk must look like furniture and stay out of the way financially."
+      }
+    ]
+  },
+  "commerce": {
+    "affiliateEnabled": true,
+    "disclosure": true,
+    "ctaStyle": "amazon"
+  },
+  "media": {
+    "featuredImage": "/images/articles/standing-desk-vs-writing-desk.jpg"
+  },
+  "publishing": {
+    "status": "published",
+    "publishedAt": "2026-08-11",
+    "updatedAt": "2026-08-17",
+    "author": "SmartDeskSetup Editorial",
+    "featured": true
+  },
+  "relationships": {
+    "relatedLinks": [
+      {
+        "title": "Best Small Desks for Apartments",
+        "href": "/blog/best-small-desks-apartments-2026",
+        "description": "Our full compact-desk shortlist if you are still comparing desk types for apartment offices."
+      },
+      {
+        "title": "Best Standing Desks for Small Apartments",
+        "href": "/blog/best-standing-desks-small-apartments",
+        "description": "Our ranked sit-stand shortlist if you decide a standing desk is the right path."
+      },
+      {
+        "title": "FlexiSpot Compact Standing Desk Review",
+        "href": "/blog/flexispot-compact-standing-desk-review",
+        "description": "A deeper look at day-to-day comfort, assembly, and who should skip our comparison winner."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "Can a writing desk still be ergonomic?",
+      "answer": "Yes—if chair height, external keyboard, and monitor height are dialed in. The desk itself does not need to move for good posture."
+    },
+    {
+      "question": "Is a standing desk worth it in a tiny room?",
+      "answer": "It can be, if you choose a compact frame. Skip oversized tops and prioritize depth that still leaves a walkway."
+    },
+    {
+      "question": "Which should I buy first?",
+      "answer": "If you already own a decent chair, invest in the desk that matches your daily hours. If you do not, fix seating before upgrading to sit-stand."
+    }
+  ],
+  "comparison": {
+    "winnerId": "flexispot-compact",
+    "winnerReason": "For full workdays in small rooms, a compact standing desk usually wins on long-term comfort. Choose a writing desk when budget, silence, and a calmer living-room look come first.",
+    "rows": [
+      {
+        "label": "Starting price",
+        "source": "editorial",
+        "values": {
+          "flexispot-compact": "From $229",
+          "bamboo-writing-desk": "From $119"
+        }
+      },
+      {
+        "label": "Height adjustment",
+        "source": "editorial",
+        "values": {
+          "flexispot-compact": "Electric sit-stand",
+          "bamboo-writing-desk": "Fixed"
+        }
+      },
+      {
+        "label": "Footprint",
+        "source": "editorial",
+        "values": {
+          "flexispot-compact": "Compact freestanding frame (~48 in wide)",
+          "bamboo-writing-desk": "Shallow fixed footprint, easier to tuck"
+        }
+      },
+      {
+        "label": "Depth",
+        "source": "editorial",
+        "values": {
+          "flexispot-compact": "About 24 in—plan for chair clearance",
+          "bamboo-writing-desk": "Shallower top—better for tight walkways"
+        }
+      },
+      {
+        "label": "Cable management",
+        "source": "editorial",
+        "values": {
+          "flexispot-compact": "Basic tray; motor and power brick need planning",
+          "bamboo-writing-desk": "Minimal cables; easier to keep visually clean"
+        }
+      },
+      {
+        "label": "Apartment flexibility",
+        "source": "editorial",
+        "values": {
+          "flexispot-compact": "Strong for daily posture changes in a fixed corner",
+          "bamboo-writing-desk": "Stronger when the room must stay guest-ready"
+        }
+      },
+      {
+        "label": "Long work days",
+        "source": "editorial",
+        "values": {
+          "flexispot-compact": "Better for 6+ hour remote workdays",
+          "bamboo-writing-desk": "Fine for lighter or hybrid laptop days"
+        }
+      },
+      {
+        "label": "Best room type",
+        "source": "editorial",
+        "values": {
+          "flexispot-compact": "Studio corner or spare-room nook with walkway room",
+          "bamboo-writing-desk": "Studio / living-room edge shared with daily life"
+        }
+      },
+      {
+        "label": "Noise",
+        "source": "editorial",
+        "values": {
+          "flexispot-compact": "Short motor hum when moving",
+          "bamboo-writing-desk": "Silent"
+        }
+      },
+      {
+        "label": "Ideal user",
+        "source": "editorial",
+        "values": {
+          "flexispot-compact": "Remote workers at the desk 6+ hours",
+          "bamboo-writing-desk": "Hybrid laptop users needing simplicity"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "single-monitor-arm",
+  "identity": {
+    "name": "Compact Single Monitor Arm",
+    "brand": "Generic",
+    "category": "accessories"
+  },
+  "classification": {
+    "subcategory": "monitor-arm",
+    "tags": ["small-space", "desk-setup", "clamp-mount"]
+  },
+  "editorial": {
+    "role": "best-for-beginners",
+    "verdict": "A simple single-arm upgrade when one screen is enough and desk depth is limited.",
+    "description": "Generic clamp-on single monitor arm class for small home offices that need the display off the desktop without a dual-arm footprint. Commerce uses a search destination, not a specific ASIN listing.",
+    "bestFor": [
+      "Laptop-plus-one-monitor desks",
+      "Shallow apartment desktops with rear clamp clearance"
+    ],
+    "notFor": [
+      "Dual-monitor setups that need a dual arm",
+      "Glass or very thin tops that cannot take a clamp"
+    ],
+    "pros": [
+      "Frees desk depth for keyboard and notebook",
+      "Clamp install suits many rental desks",
+      "Smaller footprint than dual-arm mounts"
+    ],
+    "cons": [
+      "Supports one display only",
+      "Needs enough rear overhang for the clamp",
+      "Cable routing is still manual"
+    ]
+  },
+  "commerce": {
+    "amazonUrl": "https://www.amazon.com/s?k=single+monitor+arm+clamp",
+    "priceRange": "From $35",
+    "availability": "unknown",
+    "lastChecked": "2026-08-17"
+  },
+  "media": {
+    "primary": "/products/monitor.svg",
+    "gallery": ["/products/monitor.svg"]
+  },
+  "specs": {
+    "accessory": {
+      "type": "monitor-arm",
+      "monitorCount": 1
+    }
+  },
+  "review": {
+    "rating": 4.4,
+    "summary": "Practical first monitor-arm pick when you only need one screen lifted off a small desk."
+  },
+  "comparison": {
+    "compareReady": true,
+    "keyFactors": ["monitor-count", "desk-depth", "clamp-clearance"]
+  },
+  "relationships": {
+    "relatedProducts": ["monitor-arm-dual", "monitor-light-bar"]
+  }
+}

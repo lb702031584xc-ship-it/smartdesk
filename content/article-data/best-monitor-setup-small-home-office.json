@@ -1,0 +1,80 @@
+{
+  "identity": {
+    "id": "best-monitor-setup-small-home-office",
+    "title": "Best Monitor Setup for a Small Home Office",
+    "slug": "best-monitor-setup-small-home-office"
+  },
+  "classification": {
+    "type": "best-list",
+    "category": "monitors",
+    "subcategory": "monitor-accessories",
+    "tags": [
+      "small-space",
+      "remote-work",
+      "monitor-arm",
+      "desk-setup"
+    ]
+  },
+  "editorial": {
+    "summary": "The most useful monitor setup picks for a small home office: reclaim desk space, raise the screen, and keep lighting off the desktop.",
+    "audience": [
+      "remote workers",
+      "apartment users",
+      "small-desk setups"
+    ],
+    "intent": "commercial"
+  },
+  "seo": {
+    "metaTitle": "Best Monitor Setup for a Small Home Office (2026)",
+    "metaDescription": "Compare compact monitor-setup gear for small home offices, including dual and single monitor arms plus a zero-footprint monitor light bar.",
+    "primaryKeyword": "best monitor setup for small home office",
+    "secondaryKeywords": [
+      "monitor arm small desk",
+      "monitor light bar apartment"
+    ],
+    "canonical": "/blog/best-monitor-setup-small-home-office",
+    "noindex": false
+  },
+  "products": {
+    "primary": [
+      {
+        "productId": "monitor-arm-dual",
+        "rank": 1,
+        "role": "best-overall",
+        "summary": "The first upgrade for most small desks: lift screens off the surface and reclaim typing space."
+      },
+      {
+        "productId": "monitor-light-bar",
+        "rank": 2,
+        "role": "best-space-saving",
+        "summary": "Task light that sits on the monitor instead of the desk, useful when every inch of depth is already taken."
+      },
+      {
+        "productId": "single-monitor-arm",
+        "rank": 3,
+        "role": "best-value",
+        "summary": "Article role is best-value for one-screen desks; the product catalog role remains best-for-beginners."
+      }
+    ]
+  },
+  "commerce": {
+    "affiliateEnabled": true,
+    "disclosure": true,
+    "ctaStyle": "amazon"
+  },
+  "media": {
+    "featuredImage": "",
+    "ogImage": "",
+    "pinterestImage": ""
+  },
+  "publishing": {
+    "status": "published",
+    "publishedAt": "2026-08-17",
+    "updatedAt": "2026-08-17",
+    "author": "smartdesk-team"
+  },
+  "relationships": {
+    "parentTopic": "monitors",
+    "relatedArticles": []
+  }
+}

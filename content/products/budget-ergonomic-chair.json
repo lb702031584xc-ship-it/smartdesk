@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "id": "budget-ergonomic-chair",
+  "identity": {
+    "name": "SIHOO M57 Ergonomic Office Chair",
+    "brand": "SIHOO",
+    "category": "chairs"
+  },
+  "classification": {
+    "subcategory": "budget-ergonomic-chair"
+  },
+  "editorial": {
+    "verdict": "Best budget ergonomic chair when you want adjustable lumbar and mesh comfort well under a premium Branch-class price.",
+    "description": "A true budget ergonomic office chair with adjustable lumbar and mesh support—built for small home offices that need sit-all-day basics without Branch pricing.",
+    "bestFor": [
+      "Budget buyers who still want a real adjustable ergonomic chair for a small home office"
+    ],
+    "notFor": [
+      "Anyone who needs the smallest possible apartment footprint (consider an armless task chair instead)",
+      "Buyers who want premium materials, quieter mechanisms, and long-term polish closer to Branch",
+      "Shoppers looking for a gaming chair aesthetic with a racing seat and oversized head pillow"
+    ],
+    "pros": [
+      "Dual-adjustable lumbar at a budget price",
+      "Full mesh back stays cooler in small rooms",
+      "3D armrests and seat height cover most desk setups"
+    ],
+    "cons": [
+      "Build and fine-tuning feel less refined than premium chairs",
+      "Larger than ultra-compact armless task chairs",
+      "Assembly instructions can be unclear"
+    ],
+    "featured": false
+  },
+  "commerce": {
+    "asin": "B07BDFW1Y7",
+    "amazonUrl": "https://www.amazon.com/s?k=sihoo+m57+ergonomic+office+chair",
+    "priceRange": "From $199",
+    "lastChecked": "2026-08-17"
+  },
+  "media": {
+    "primary": "/products/chair.svg",
+    "gallery": [
+      "/products/chair.svg"
+    ]
+  },
+  "specs": {
+    "chair": {
+      "adjustable": true,
+      "seatHeightRangeIn": "17.1–21.1",
+      "lumbarSupport": true,
+      "lumbarType": "Dual-adjustable",
+      "armrest": true,
+      "armrestAdjustable": true,
+      "armrestRemovable": false,
+      "recline": true,
+      "meshBack": true,
+      "weightCapacityLb": 330,
+      "widthIn": 26,
+      "depthIn": 25,
+      "heightIn": 50,
+      "assemblyTimeMin": 40
+    }
+  },
+  "review": {
+    "rating": 4.5,
+    "summary": "A true budget ergonomic office chair with adjustable lumbar and mesh support—built for small home offices that need sit-all-day basics without Branch pricing."
+  },
+  "relationships": {
+    "relatedProducts": [
+      "branch-ergonomic-chair"
+    ]
+  }
+}

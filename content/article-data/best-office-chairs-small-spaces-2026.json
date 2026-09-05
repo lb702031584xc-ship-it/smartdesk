@@ -1,0 +1,103 @@
+{
+  "identity": {
+    "id": "best-office-chairs-small-spaces-2026",
+    "title": "Best Office Chairs for Small Spaces in 2026",
+    "slug": "best-office-chairs-small-spaces-2026"
+  },
+  "classification": {
+    "type": "best-list",
+    "category": "chairs",
+    "tags": [
+      "best office chairs for small spaces",
+      "small home office chair",
+      "compact ergonomic chair",
+      "apartment office",
+      "best of"
+    ]
+  },
+  "editorial": {
+    "summary": "In a small room, the best office chair is the one that supports real work without blocking the walkway or looking like a gaming throne.",
+    "intent": "commercial",
+    "methodology": "We ranked chairs for small home offices by footprint, tuck-under clearance under shallow desks, seat-height adjustability, lumbar support quality, visual bulk in shared rooms, and value. Prices and availability can change on Amazon."
+  },
+  "seo": {
+    "metaDescription": "The best office chairs for small spaces in 2026—compact ergonomic and small home office chair picks ranked for footprint, tuck-under fit, and everyday support.",
+    "noindex": false
+  },
+  "products": {
+    "primary": [
+      {
+        "productId": "branch-ergonomic-chair",
+        "rank": 1,
+        "role": "best-overall",
+        "summary": "The best overall compact ergonomic chair for most small home offices that need all-day support without a bulky footprint."
+      },
+      {
+        "productId": "budget-ergonomic-chair",
+        "rank": 2,
+        "role": "best-budget",
+        "summary": "The best budget ergonomic office chair when you want real adjustability without paying Branch-class money."
+      },
+      {
+        "productId": "space-saving-office-chair",
+        "rank": 3,
+        "role": "best-space-saving",
+        "summary": "The best space-saving small home office chair for studios and shallow desks that need maximum tuck-under clearance."
+      }
+    ],
+    "winnerProductId": "branch-ergonomic-chair",
+    "winnerReason": "Best balance of all-day support, compact silhouette, and living-room-friendly design for most small-space workdays."
+  },
+  "commerce": {
+    "affiliateEnabled": true,
+    "disclosure": true,
+    "ctaStyle": "amazon"
+  },
+  "media": {
+    "featuredImage": "/images/articles/best-office-chairs-small-spaces.jpg"
+  },
+  "publishing": {
+    "status": "published",
+    "publishedAt": "2026-08-17",
+    "updatedAt": "2026-08-17",
+    "author": "SmartDeskSetup Editorial",
+    "featured": true
+  },
+  "relationships": {
+    "relatedLinks": [
+      {
+        "title": "Ergonomic Chairs for Small Rooms",
+        "href": "/blog/ergonomic-chairs-small-rooms",
+        "description": "How to pick supportive seating that still fits under a compact desk."
+      },
+      {
+        "title": "Best Small Desks for Apartments in 2026",
+        "href": "/blog/best-small-desks-apartments-2026",
+        "description": "Pair your chair with a compact desk that leaves a walkway."
+      },
+      {
+        "title": "Best Standing Desks for Small Apartments",
+        "href": "/blog/best-standing-desks-small-apartments",
+        "description": "If sit-stand is next on your list, start with our standing-desk shortlist."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "What makes a chair good for small spaces?",
+      "answer": "A smaller footprint, the ability to tuck under a shallow desk, breathable materials that do not visually dominate the room, and enough adjustability for your desk height. Oversized gaming chairs usually fail the first two tests."
+    },
+    {
+      "question": "Do I need a fully adjustable ergonomic chair in a studio?",
+      "answer": "If you work long days, yes—prioritize seat height and lumbar support. If you only need short sessions and maximum floor clearance, a compact armless task chair can be the smarter small-space choice."
+    },
+    {
+      "question": "Should I buy the chair or the desk first?",
+      "answer": "Measure both together. In apartments, desk depth and chair tuck-under clearance are one system. If footprint is the tighter constraint, lock the desk depth first, then choose a chair that fits under it."
+    },
+    {
+      "question": "Are armless chairs okay for full workdays?",
+      "answer": "They are excellent for space, but weaker for all-day support. Use an armless chair when tuck-under clearance is the priority; choose a compact ergonomic chair with adjustable lumbar for heavy remote-work days."
+    }
+  ]
+}

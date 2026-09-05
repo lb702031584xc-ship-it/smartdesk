@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "cable-tray-kit",
+  "identity": {
+    "name": "Under-Desk Cable Tray Kit",
+    "brand": "Generic",
+    "category": "accessories"
+  },
+  "classification": {
+    "subcategory": "cable-management"
+  },
+  "editorial": {
+    "description": "A tray-and-sleeve kit that hides power bricks and keeps floors clear under a compact desk.",
+    "bestFor": [
+      "Quick cable cleanup in rentals"
+    ],
+    "pros": [
+      "Fast install",
+      "Affordable",
+      "Big visual improvement"
+    ],
+    "cons": [
+      "Basic finish",
+      "Limited capacity for thick bricks"
+    ],
+    "featured": false
+  },
+  "commerce": {
+    "amazonUrl": "https://www.amazon.com/s?k=under+desk+cable+management+tray",
+    "priceRange": "From $28"
+  },
+  "media": {
+    "primary": "/products/storage.svg"
+  },
+  "review": {
+    "rating": 4.4,
+    "summary": "A tray-and-sleeve kit that hides power bricks and keeps floors clear under a compact desk."
+  }
+}

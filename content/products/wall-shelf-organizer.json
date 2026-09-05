@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-shelf-organizer",
+  "identity": {
+    "name": "Wall-Mounted Desk Shelf",
+    "brand": "Generic",
+    "category": "accessories"
+  },
+  "classification": {
+    "subcategory": "shelf"
+  },
+  "editorial": {
+    "description": "Vertical storage for notebooks, docks, and headphones when drawer space is nonexistent.",
+    "bestFor": [
+      "Studios without drawer space"
+    ],
+    "pros": [
+      "Uses wall space",
+      "Easy reach zone",
+      "Studio-friendly"
+    ],
+    "cons": [
+      "Requires wall anchors",
+      "Not for heavy monitors"
+    ],
+    "featured": false
+  },
+  "commerce": {
+    "amazonUrl": "https://www.amazon.com/s?k=wall+mounted+desk+shelf",
+    "priceRange": "From $36"
+  },
+  "media": {
+    "primary": "/products/shelf.svg"
+  },
+  "review": {
+    "rating": 4.3,
+    "summary": "Vertical storage for notebooks, docks, and headphones when drawer space is nonexistent."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-folding-desk",
+  "identity": {
+    "name": "Wall-Mounted Folding Desk",
+    "brand": "Generic",
+    "category": "desks"
+  },
+  "classification": {
+    "subcategory": "folding-desk"
+  },
+  "editorial": {
+    "description": "Folds away when you are done—useful when the office is also the guest room.",
+    "bestFor": [
+      "Studios that need the floor back at night"
+    ],
+    "pros": [
+      "Frees floor space",
+      "Renter-friendly with care",
+      "Clean visual footprint"
+    ],
+    "cons": [
+      "Weight limits matter",
+      "Less ergonomic for long days"
+    ],
+    "featured": false
+  },
+  "commerce": {
+    "amazonUrl": "https://www.amazon.com/s?k=wall+mounted+folding+desk",
+    "priceRange": "From $89"
+  },
+  "media": {
+    "primary": "/products/shelf.svg"
+  },
+  "review": {
+    "rating": 4.2,
+    "summary": "Folds away when you are done—useful when the office is also the guest room."
+  }
+}

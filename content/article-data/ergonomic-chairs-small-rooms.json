@@ -1,0 +1,29 @@
+{
+  "identity": {
+    "id": "ergonomic-chairs-small-rooms",
+    "title": "Ergonomic Chairs for Small Rooms Without the Bulky Look",
+    "slug": "ergonomic-chairs-small-rooms"
+  },
+  "classification": {
+    "type": "guide",
+    "category": "chairs",
+    "tags": ["ergonomics", "office chair", "small space"]
+  },
+  "editorial": {
+    "intent": "informational"
+  },
+  "seo": {
+    "metaDescription": "How to pick a supportive chair that fits under a compact desk and still looks right in a living space.",
+    "noindex": false
+  },
+  "commerce": {
+    "affiliateEnabled": true,
+    "disclosure": true,
+    "ctaStyle": "amazon"
+  },
+  "publishing": {
+    "status": "published",
+    "publishedAt": "2026-08-05",
+    "featured": true
+  }
+}

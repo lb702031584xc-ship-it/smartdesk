@@ -1,0 +1,71 @@
+{
+  "identity": {
+    "id": "article-schema-v1-comparison-fixture",
+    "title": "Article Schema V1 Comparison Fixture",
+    "slug": "article-schema-v1-comparison-fixture"
+  },
+  "classification": {
+    "type": "comparison",
+    "category": "chairs",
+    "tags": ["fixture", "article-schema"]
+  },
+  "editorial": {
+    "summary": "Fixture comparison article for Article → ProductV1 resolution tests.",
+    "audience": ["editors"],
+    "intent": "commercial"
+  },
+  "seo": {
+    "metaTitle": "Article Schema V1 Comparison Fixture",
+    "metaDescription": "Internal SmartDesk comparison fixture for Phase 27.",
+    "primaryKeyword": "article schema comparison fixture",
+    "secondaryKeywords": [],
+    "canonical": "",
+    "noindex": true
+  },
+  "products": {
+    "primary": [
+      {
+        "productId": "budget-ergonomic-chair",
+        "rank": 1,
+        "role": "best-budget"
+      },
+      {
+        "productId": "space-saving-office-chair",
+        "rank": 2,
+        "role": "best-space-saving"
+      }
+    ],
+    "winnerProductId": "budget-ergonomic-chair",
+    "winnerReason": "Fixture winner for schema validation only."
+  },
+  "commerce": {
+    "affiliateEnabled": true,
+    "disclosure": true
+  },
+  "media": {
+    "featuredImage": ""
+  },
+  "publishing": {
+    "status": "draft",
+    "updatedAt": "2026-08-21",
+    "author": "smartdesk-team"
+  },
+  "relationships": {
+    "parentTopic": "office-chairs",
+    "relatedArticles": []
+  },
+  "comparison": {
+    "winnerId": "budget-ergonomic-chair",
+    "winnerReason": "Fixture winner for schema validation only.",
+    "rows": [
+      {
+        "label": "Best for",
+        "source": "editorial",
+        "values": {
+          "budget-ergonomic-chair": "Tight budgets",
+          "space-saving-office-chair": "Narrow rooms"
+        }
+      }
+    ]
+  }
+}

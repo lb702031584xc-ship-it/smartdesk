@@ -1,0 +1,16 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720" fill="none">
+  <rect width="960" height="720" fill="#F3F3F0"/>
+  <rect x="0" y="520" width="960" height="200" fill="#E8E8E3"/>
+  <rect x="170" y="360" width="420" height="22" rx="4" fill="#1A1A1A"/>
+  <rect x="210" y="382" width="18" height="120" fill="#333333"/>
+  <rect x="530" y="382" width="18" height="120" fill="#333333"/>
+  <rect x="250" y="210" width="260" height="150" rx="10" fill="#111111"/>
+  <rect x="268" y="228" width="224" height="114" rx="4" fill="#D9E4E8"/>
+  <rect x="350" y="360" width="70" height="10" rx="2" fill="#666666"/>
+  <circle cx="700" cy="280" r="48" fill="#E7D5A3"/>
+  <rect x="690" y="328" width="20" height="90" fill="#8C7A55"/>
+  <path d="M650 500c28-58 96-58 124 0" stroke="#111111" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <rect x="678" y="496" width="72" height="16" rx="8" fill="#111111"/>
+  <rect x="120" y="410" width="80" height="46" rx="8" fill="#2F2F2F"/>
+  <text x="48" y="64" fill="#8A8A8A" font-family="Arial, sans-serif" font-size="20">Workspace placeholder</text>
+</svg>

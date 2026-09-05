@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "id": "budget-standing-desk",
+  "identity": {
+    "name": "ApexDesk MiniRise Standing Desk",
+    "brand": "ApexDesk",
+    "category": "desks"
+  },
+  "classification": {
+    "subcategory": "standing-desk"
+  },
+  "editorial": {
+    "verdict": "Best budget standing desk when you want real height adjustment and can live without premium extras.",
+    "description": "An affordable sit-stand desk for small apartments that need daily height changes without spending FlexiSpot money.",
+    "bestFor": [
+      "Budget buyers who still want electric sit-stand in a small apartment"
+    ],
+    "notFor": [
+      "Anyone who needs quiet dual motors, memory presets, or rock-solid dual-monitor stability at full height",
+      "Buyers who want furniture-grade wood or built-in cable management"
+    ],
+    "pros": [
+      "Entry-level electric lift under $200",
+      "Fits a 40–48 inch footprint without a premium price",
+      "Simple controls and stable enough for one monitor plus laptop"
+    ],
+    "cons": [
+      "Louder motor and slower travel than mid-range desks",
+      "No memory presets or cable tray included",
+      "Frame feels lighter at full standing height with dual monitors"
+    ],
+    "featured": false
+  },
+  "commerce": {
+    "asin": "B0EXAMPLEBUDGET1",
+    "amazonUrl": "https://www.amazon.com/s?k=budget+electric+standing+desk+small",
+    "priceRange": "From $169",
+    "lastChecked": "2026-08-17"
+  },
+  "media": {
+    "primary": "/products/desk.svg",
+    "gallery": [
+      "/products/desk.svg"
+    ]
+  },
+  "specs": {
+    "desk": {
+      "adjustable": true,
+      "heightRangeIn": "28–46",
+      "motor": "Electric (entry-level)",
+      "weightCapacityLb": 110,
+      "widthIn": 48,
+      "depthIn": 24,
+      "assemblyTimeMin": 60
+    }
+  },
+  "review": {
+    "rating": 4.4,
+    "summary": "An affordable sit-stand desk for small apartments that need daily height changes without spending FlexiSpot money."
+  },
+  "relationships": {
+    "relatedProducts": [
+      "flexispot-compact"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "identity": {
+    "id": "40-inch-desk-setup",
+    "title": "How to Build a 40-Inch Desk Setup That Still Feels Premium",
+    "slug": "40-inch-desk-setup"
+  },
+  "classification": {
+    "type": "guide",
+    "category": "desks",
+    "tags": ["compact desk", "apartment office", "layout"]
+  },
+  "editorial": {
+    "intent": "informational"
+  },
+  "seo": {
+    "metaDescription": "A practical layout for apartment desks under 40 inches wide, including monitor height, storage, and cable control.",
+    "noindex": false
+  },
+  "commerce": {
+    "affiliateEnabled": true,
+    "disclosure": true,
+    "ctaStyle": "amazon"
+  },
+  "media": {
+    "featuredImage": ""
+  },
+  "publishing": {
+    "status": "published",
+    "publishedAt": "2026-08-10",
+    "featured": true
+  }
+}

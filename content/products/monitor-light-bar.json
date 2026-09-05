@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "monitor-light-bar",
+  "identity": {
+    "name": "Monitor Light Bar",
+    "brand": "Generic",
+    "category": "accessories"
+  },
+  "classification": {
+    "subcategory": "monitor-light"
+  },
+  "editorial": {
+    "description": "Asymmetric desk lighting that brightens your keyboard without washing out the screen.",
+    "bestFor": [
+      "Glare-free task light with zero desk footprint"
+    ],
+    "pros": [
+      "No desk footprint",
+      "Excellent glare control",
+      "Adjustable warmth"
+    ],
+    "cons": [
+      "Higher cost than lamps",
+      "Fits specific monitor thicknesses"
+    ],
+    "featured": true
+  },
+  "commerce": {
+    "amazonUrl": "https://www.amazon.com/s?k=monitor+light+bar",
+    "priceRange": "From $89"
+  },
+  "media": {
+    "primary": "/products/lighting.svg"
+  },
+  "review": {
+    "rating": 4.8,
+    "summary": "Asymmetric desk lighting that brightens your keyboard without washing out the screen."
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "identity": {
+    "id": "single-monitor-arm-review",
+    "title": "Compact Single Monitor Arm Review",
+    "slug": "single-monitor-arm-review"
+  },
+  "classification": {
+    "type": "review",
+    "category": "monitors",
+    "subcategory": "monitor-arm",
+    "tags": [
+      "monitor-arm",
+      "small-space",
+      "desk-setup",
+      "review"
+    ]
+  },
+  "editorial": {
+    "summary": "When a small desk only needs one screen off the surface, a compact single monitor arm is usually enough—without the dual-arm footprint.",
+    "audience": [
+      "apartment desks",
+      "laptop-plus-one-monitor setups"
+    ],
+    "intent": "commercial"
+  },
+  "seo": {
+    "metaTitle": "Compact Single Monitor Arm Review (Small Desk)",
+    "metaDescription": "Who a compact single monitor arm is for on a small home-office desk, when to skip it, and how it differs from a dual arm.",
+    "primaryKeyword": "single monitor arm review",
+    "secondaryKeywords": [
+      "monitor arm small desk",
+      "clamp monitor arm apartment"
+    ],
+    "canonical": "/blog/single-monitor-arm-review",
+    "noindex": false
+  },
+  "products": {
+    "primary": [
+      {
+        "productId": "single-monitor-arm",
+        "role": "best-overall",
+        "summary": "Article-level role for this review page; product catalog editorial.role remains best-for-beginners."
+      }
+    ]
+  },
+  "commerce": {
+    "affiliateEnabled": true,
+    "disclosure": true,
+    "ctaStyle": "amazon"
+  },
+  "media": {
+    "featuredImage": "",
+    "ogImage": "",
+    "pinterestImage": ""
+  },
+  "publishing": {
+    "status": "published",
+    "publishedAt": "2026-08-17",
+    "updatedAt": "2026-08-17",
+    "author": "smartdesk-team"
+  },
+  "relationships": {
+    "parentTopic": "monitors",
+    "relatedArticles": [
+      "best-monitor-setup-small-home-office",
+      "single-vs-dual-monitor-arm"
+    ]
+  }
+}

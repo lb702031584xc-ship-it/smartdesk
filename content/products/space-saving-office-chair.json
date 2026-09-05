@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "id": "space-saving-office-chair",
+  "identity": {
+    "name": "Sweetcrispy Small Armless Desk Chair",
+    "brand": "Sweetcrispy",
+    "category": "chairs"
+  },
+  "classification": {
+    "subcategory": "space-saving-chair"
+  },
+  "editorial": {
+    "verdict": "Best space-saving office chair when the desk is shallow, the room is tiny, and tuck-under clearance matters more than all-day ergonomic extras.",
+    "description": "A compact armless mesh task chair made for studio apartments and shallow desks—prioritizing footprint and tuck-under clearance over full-day ergonomic refinement.",
+    "bestFor": [
+      "Studio apartments and ultra-tight work corners that need a true small-footprint office chair"
+    ],
+    "notFor": [
+      "Long-hour heavy remote workers who need all-day flagship ergonomic support",
+      "Anyone who needs advanced adjustable lumbar or armrest controls",
+      "Buyers who want a premium mesh chair experience closer to Branch or SIHOO M57"
+    ],
+    "pros": [
+      "Armless design tucks under shallow desks",
+      "Very small footprint for studios and tight corners",
+      "Breathable mesh low back with simple lumbar curve"
+    ],
+    "cons": [
+      "Not built for all-day flagship ergonomics",
+      "No armrests or advanced lumbar adjustment",
+      "Low-back support feels limited on long workdays"
+    ],
+    "featured": false
+  },
+  "commerce": {
+    "asin": "B0CTJF8T2G",
+    "amazonUrl": "https://www.amazon.com/Sweetcrispy-Small-Armless-Desk-Chair/dp/B0CTJF8T2G",
+    "priceRange": "From $51",
+    "lastChecked": "2026-08-17"
+  },
+  "media": {
+    "primary": "/products/chair.svg",
+    "gallery": [
+      "/products/chair.svg"
+    ]
+  },
+  "specs": {
+    "chair": {
+      "adjustable": true,
+      "seatHeightRangeIn": "16.54–21.25",
+      "lumbarSupport": true,
+      "lumbarType": "Fixed",
+      "armrest": false,
+      "armrestAdjustable": false,
+      "armrestRemovable": false,
+      "recline": false,
+      "meshBack": true,
+      "weightCapacityLb": 250,
+      "widthIn": 17,
+      "depthIn": 16,
+      "heightIn": 34,
+      "assemblyTimeMin": 10
+    }
+  },
+  "review": {
+    "rating": 4.4,
+    "summary": "A compact armless mesh task chair made for studio apartments and shallow desks—prioritizing footprint and tuck-under clearance over full-day ergonomic refinement."
+  },
+  "relationships": {
+    "relatedProducts": [
+      "branch-ergonomic-chair",
+      "budget-ergonomic-chair"
+    ]
+  }
+}

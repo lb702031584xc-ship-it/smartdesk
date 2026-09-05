@@ -1,0 +1,29 @@
+{
+  "identity": {
+    "id": "cable-management-apartment-desk",
+    "title": "Cable Management for Apartment Desks in Under an Hour",
+    "slug": "cable-management-apartment-desk"
+  },
+  "classification": {
+    "type": "guide",
+    "category": "storage",
+    "tags": ["cables", "organization", "quick wins"]
+  },
+  "editorial": {
+    "intent": "informational"
+  },
+  "seo": {
+    "metaDescription": "A simple under-desk tray method that hides power bricks and keeps floors clear in shared living spaces.",
+    "noindex": false
+  },
+  "commerce": {
+    "affiliateEnabled": true,
+    "disclosure": true,
+    "ctaStyle": "amazon"
+  },
+  "publishing": {
+    "status": "published",
+    "publishedAt": "2026-07-18",
+    "featured": false
+  }
+}

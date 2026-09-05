@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "monitor-arm-dual",
+  "identity": {
+    "name": "VIVO Dual Monitor Arm",
+    "brand": "VIVO",
+    "category": "accessories"
+  },
+  "classification": {
+    "subcategory": "monitor-arm"
+  },
+  "editorial": {
+    "description": "Clamp-on arms reclaim desk surface and raise screens to eye level in seconds.",
+    "bestFor": ["Freeing desk space on shallow tops"],
+    "pros": ["Reclaims surface area", "Easy clamp install", "Smooth tilt"],
+    "cons": ["Needs sturdy desktop", "Cable routing is manual"],
+    "featured": true
+  },
+  "commerce": {
+    "amazonUrl": "https://www.amazon.com/s?k=dual+monitor+arm",
+    "priceRange": "From $45"
+  },
+  "media": {
+    "primary": "/products/monitor.svg"
+  },
+  "review": {
+    "rating": 4.5,
+    "summary": "Clamp-on arms reclaim desk surface and raise screens to eye level in seconds."
+  }
+}

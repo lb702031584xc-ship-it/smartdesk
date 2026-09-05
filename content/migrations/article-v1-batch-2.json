@@ -1,0 +1,48 @@
+{
+  "batch": 2,
+  "phase": 7,
+  "description": "Controlled legacy → Article V1 migration batch 2 (edge-case coverage)",
+  "articles": [
+    {
+      "slug": "best-small-desks-apartments-2026",
+      "type": "best-list",
+      "coverage": [
+        "featured",
+        "FAQ-heavy",
+        "relatedLinks",
+        "ProductRef overrides",
+        "SEO description≠intro"
+      ]
+    },
+    {
+      "slug": "best-standing-desks-small-apartments",
+      "type": "best-list",
+      "coverage": [
+        "featured",
+        "relatedLinks",
+        "FAQ",
+        "ProductRef overrides",
+        "SEO description≠intro"
+      ]
+    },
+    {
+      "slug": "ergonomic-chairs-small-rooms",
+      "type": "guide",
+      "coverage": ["featured", "product-free guide"]
+    },
+    {
+      "slug": "monitor-arms-small-desks",
+      "type": "guide",
+      "coverage": ["featured", "product-free guide"]
+    },
+    {
+      "slug": "cable-management-apartment-desk",
+      "type": "guide",
+      "coverage": ["featured:false", "product-free guide", "storage category"]
+    }
+  ],
+  "notes": {
+    "rankingAlias": "not available in remaining legacy set",
+    "verdictBestForOverrides": "not present on remaining legacy articles; Batch 1 covered verdict"
+  }
+}

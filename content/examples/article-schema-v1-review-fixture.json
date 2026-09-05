@@ -1,0 +1,56 @@
+{
+  "identity": {
+    "id": "article-schema-v1-review-fixture",
+    "title": "Article Schema V1 Review Fixture",
+    "slug": "article-schema-v1-review-fixture"
+  },
+  "classification": {
+    "type": "review",
+    "category": "desks",
+    "tags": ["fixture", "article-schema"]
+  },
+  "editorial": {
+    "summary": "Fixture review article for Article → ProductV1 resolution tests.",
+    "audience": ["editors"],
+    "intent": "commercial"
+  },
+  "seo": {
+    "metaTitle": "Article Schema V1 Review Fixture",
+    "metaDescription": "Internal SmartDesk review fixture for Phase 27.",
+    "primaryKeyword": "article schema review fixture",
+    "secondaryKeywords": [],
+    "canonical": "",
+    "noindex": true
+  },
+  "products": {
+    "primary": [
+      {
+        "productId": "flexispot-compact",
+        "rank": 1,
+        "role": "best-overall"
+      }
+    ]
+  },
+  "commerce": {
+    "affiliateEnabled": true,
+    "disclosure": true
+  },
+  "media": {
+    "featuredImage": ""
+  },
+  "publishing": {
+    "status": "draft",
+    "updatedAt": "2026-08-21",
+    "author": "smartdesk-team"
+  },
+  "relationships": {
+    "parentTopic": "standing-desks",
+    "relatedArticles": []
+  },
+  "review": {
+    "ratingCategories": [
+      { "label": "Stability", "score": 4.2 },
+      { "label": "Footprint", "score": 4.5 }
+    ]
+  }
+}

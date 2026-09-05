@@ -1,0 +1,27 @@
+{
+  "batch": 1,
+  "phase": 7,
+  "description": "Controlled legacy → Article V1 migration batch 1",
+  "articles": [
+    {
+      "slug": "best-office-chairs-small-spaces-2026",
+      "type": "best-list",
+      "reason": "Rich best-list with ranks, badges, winner, methodology, FAQ, related"
+    },
+    {
+      "slug": "flexispot-compact-standing-desk-review",
+      "type": "review",
+      "reason": "Only rich legacy review with ratingCategories, verdict override, FAQ"
+    },
+    {
+      "slug": "standing-desk-vs-writing-desk",
+      "type": "comparison",
+      "reason": "Only rich legacy comparison with full comparisonRows, winner, FAQ"
+    },
+    {
+      "slug": "40-inch-desk-setup",
+      "type": "guide",
+      "reason": "Representative guide/how-to without forced product refs"
+    }
+  ]
+}

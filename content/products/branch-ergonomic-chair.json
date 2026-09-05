@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "branch-ergonomic-chair",
+  "identity": {
+    "name": "Branch Ergonomic Chair",
+    "brand": "Branch",
+    "category": "chairs"
+  },
+  "classification": {
+    "subcategory": "ergonomic-chair"
+  },
+  "editorial": {
+    "verdict": "Best overall office chair for small spaces when you need all-day support without a bulky gaming-chair footprint.",
+    "description": "A clean-lined chair with lumbar support that works in rooms where bulky gaming chairs feel wrong.",
+    "bestFor": ["All-day seating in shared living spaces"],
+    "notFor": [
+      "Shoppers hunting a budget chair under $200",
+      "Anyone who wants a headrest-heavy gaming look or extra-wide throne seating",
+      "Users who need fully removable armrests for an ultra-shallow desk tuck"
+    ],
+    "pros": ["Supportive lumbar", "Compact silhouette", "Breathable mesh"],
+    "cons": ["Premium price", "Limited color options"],
+    "featured": false
+  },
+  "commerce": {
+    "asin": "B0EXAMPLEBRANCH1",
+    "amazonUrl": "https://www.amazon.com/s?k=ergonomic+office+chair",
+    "priceRange": "From $399",
+    "lastChecked": "2026-08-17"
+  },
+  "media": {
+    "primary": "/products/chair.svg",
+    "gallery": ["/products/chair.svg"]
+  },
+  "specs": {
+    "chair": {
+      "adjustable": true,
+      "seatHeightRangeIn": "16.5–21",
+      "lumbarSupport": true,
+      "lumbarType": "Adjustable",
+      "armrest": true,
+      "armrestAdjustable": true,
+      "armrestRemovable": false,
+      "recline": true,
+      "meshBack": true,
+      "weightCapacityLb": 275,
+      "widthIn": 27,
+      "depthIn": 27,
+      "heightIn": 40,
+      "assemblyTimeMin": 35
+    }
+  },
+  "review": {
+    "rating": 4.7,
+    "summary": "A clean-lined chair with lumbar support that works in rooms where bulky gaming chairs feel wrong."
+  }
+}

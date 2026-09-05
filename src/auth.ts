@@ -1,0 +1,56 @@
+import NextAuth from "next-auth";
+import Credentials from "next-auth/providers/credentials";
+import { compare } from "bcryptjs";
+import { isAllowedAdminEmail } from "@/lib/admin/auth-config";
+
+export const { handlers, auth, signIn, signOut } = NextAuth({
+  pages: {
+    signIn: "/admin/login",
+  },
+  session: {
+    strategy: "jwt",
+  },
+  providers: [
+    Credentials({
+      name: "Admin",
+      credentials: {
+        email: { label: "Email", type: "email" },
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(credentials) {
+        const email = credentials?.email;
+        const password = credentials?.password;
+
+        if (typeof email !== "string" || typeof password !== "string") {
+          return null;
+        }
+
+        if (!isAllowedAdminEmail(email)) {
+          return null;
+        }
+
+        const hash = process.env.ADMIN_PASSWORD_HASH;
+        if (!hash) {
+          return null;
+        }
+
+        const valid = await compare(password, hash);
+        if (!valid) {
+          return null;
+        }
+
+        return { id: email, email, name: "Admin" };
+      },
+    }),
+  ],
+  callbacks: {
+    authorized({ auth: session, request }) {
+      const isAdmin = request.nextUrl.pathname.startsWith("/admin");
+      const isLoginPage = request.nextUrl.pathname === "/admin/login";
+
+      if (isLoginPage) return true;
+      if (isAdmin) return Boolean(session?.user);
+      return true;
+    },
+  },
+});

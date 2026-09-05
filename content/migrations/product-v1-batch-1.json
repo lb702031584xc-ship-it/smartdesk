@@ -1,0 +1,28 @@
+{
+  "batch": 1,
+  "phase": 10,
+  "description": "Controlled legacy → Product V1 migration batch 1",
+  "products": [
+    {
+      "id": "flexispot-compact",
+      "category": "desks",
+      "reason": "Featured desk with rich specs, commerce, review slug, alternatives"
+    },
+    {
+      "id": "branch-ergonomic-chair",
+      "category": "chairs",
+      "reason": "Rich chair specs/editorial used by Article V1 best list"
+    },
+    {
+      "id": "monitor-arm-dual",
+      "category": "accessories",
+      "reason": "Accessory with legacy monitors runtime mapping; comparison/best-list usage"
+    }
+  ],
+  "notes": {
+    "existingProductV1": ["single-monitor-arm"],
+    "canonicalVsRuntime": {
+      "monitor-arm-dual": "V1 accessories → adapter legacy category monitors"
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "_comment": "Phase 28 Content Graph fixture — office chairs cluster (IDs only).",
+  "articles": [
+    {
+      "identity": {
+        "id": "cg-best-office-chairs",
+        "title": "Content Graph Fixture: Best Office Chairs",
+        "slug": "cg-best-office-chairs"
+      },
+      "classification": {
+        "type": "best-list",
+        "category": "chairs",
+        "tags": ["fixture", "content-graph"]
+      },
+      "editorial": {
+        "summary": "Fixture best-list for Content Graph resolution.",
+        "audience": ["editors"],
+        "intent": "commercial"
+      },
+      "seo": {
+        "metaTitle": "CG Best Office Chairs Fixture",
+        "metaDescription": "Internal Content Graph fixture.",
+        "noindex": true
+      },
+      "products": {
+        "primary": [
+          {
+            "productId": "branch-ergonomic-chair",
+            "rank": 1,
+            "role": "best-overall"
+          },
+          {
+            "productId": "budget-ergonomic-chair",
+            "rank": 2,
+            "role": "best-budget"
+          }
+        ]
+      },
+      "publishing": {
+        "status": "draft",
+        "updatedAt": "2026-08-21",
+        "author": "smartdesk-team"
+      },
+      "relationships": {
+        "parentTopic": "office-chairs",
+        "relatedArticles": ["cg-branch-chair-review"]
+      }
+    },
+    {
+      "identity": {
+        "id": "cg-branch-chair-review",
+        "title": "Content Graph Fixture: Branch Chair Review",
+        "slug": "cg-branch-chair-review"
+      },
+      "classification": {
+        "type": "review",
+        "category": "chairs",
+        "tags": ["fixture", "content-graph"]
+      },
+      "editorial": {
+        "summary": "Fixture review for Content Graph resolution.",
+        "audience": ["editors"],
+        "intent": "commercial"
+      },
+      "seo": {
+        "metaTitle": "CG Branch Chair Review Fixture",
+        "metaDescription": "Internal Content Graph fixture.",
+        "noindex": true
+      },
+      "products": {
+        "primary": [
+          {
+            "productId": "branch-ergonomic-chair",
+            "rank": 1,
+            "role": "best-overall"
+          }
+        ]
+      },
+      "publishing": {
+        "status": "draft",
+        "updatedAt": "2026-08-21",
+        "author": "smartdesk-team"
+      },
+      "relationships": {
+        "parentTopic": "office-chairs",
+        "relatedArticles": ["cg-best-office-chairs"]
+      },
+      "review": {
+        "ratingCategories": [
+          { "label": "Comfort", "score": 4 }
+        ]
+      }
+    }
+  ],
+  "expected": {
+    "topicId": "office-chairs",
+    "productId": "branch-ergonomic-chair",
+    "minArticlesForProduct": 2
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "bamboo-writing-desk",
+  "identity": {
+    "name": "Shallow Bamboo Writing Desk",
+    "brand": "Generic",
+    "category": "desks"
+  },
+  "classification": {
+    "subcategory": "writing-desk"
+  },
+  "editorial": {
+    "description": "A fixed-height option when you need a calm surface and do not need sit-stand.",
+    "bestFor": [
+      "Laptop-only setups on a tight budget"
+    ],
+    "pros": [
+      "Narrow depth",
+      "Warm, quiet look",
+      "Easy to move"
+    ],
+    "cons": [
+      "No height adjust",
+      "Not ideal for heavy multi-monitor rigs"
+    ],
+    "featured": false
+  },
+  "commerce": {
+    "amazonUrl": "https://www.amazon.com/s?k=bamboo+writing+desk+small",
+    "priceRange": "From $119"
+  },
+  "media": {
+    "primary": "/products/desk.svg"
+  },
+  "review": {
+    "rating": 4.3,
+    "summary": "A fixed-height option when you need a calm surface and do not need sit-stand."
+  }
+}

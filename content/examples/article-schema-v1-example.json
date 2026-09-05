@@ -1,0 +1,53 @@
+{
+  "identity": {
+    "id": "article-schema-v1-example",
+    "title": "Article Schema V1 Example",
+    "slug": "article-schema-v1-example"
+  },
+  "classification": {
+    "type": "best-list",
+    "category": "chairs",
+    "tags": ["small-space", "remote-work"]
+  },
+  "editorial": {
+    "summary": "Example Article V1 fixture used to verify the SmartDesk article schema.",
+    "audience": ["remote workers"],
+    "intent": "commercial"
+  },
+  "seo": {
+    "metaTitle": "Article Schema V1 Example",
+    "metaDescription": "Internal SmartDesk Article Schema V1 fixture.",
+    "primaryKeyword": "article schema example",
+    "secondaryKeywords": [],
+    "canonical": "",
+    "noindex": true
+  },
+  "products": {
+    "primary": [
+      {
+        "productId": "branch-ergonomic-chair",
+        "rank": 1,
+        "role": "best-overall"
+      }
+    ]
+  },
+  "commerce": {
+    "affiliateEnabled": true,
+    "disclosure": true,
+    "ctaStyle": "amazon"
+  },
+  "media": {
+    "featuredImage": "",
+    "ogImage": "",
+    "pinterestImage": ""
+  },
+  "publishing": {
+    "status": "draft",
+    "updatedAt": "2026-08-17",
+    "author": "smartdesk-team"
+  },
+  "relationships": {
+    "parentTopic": "office-chairs",
+    "relatedArticles": []
+  }
+}

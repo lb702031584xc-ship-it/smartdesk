@@ -1,0 +1,51 @@
+import type { Metadata } from "next";
+import type { ReactNode } from "react";
+import { redirect } from "next/navigation";
+import { auth } from "@/auth";
+import { isAllowedAdminEmail, isAuthConfigured } from "@/lib/admin/auth-config";
+import { IntelligenceShell } from "@/components/intelligence/IntelligenceShell";
+
+/**
+ * Placement (Phase 33 audit):
+ * - Route: /dashboard/intelligence*
+ * - Auth: same operator gate as Admin (read-only consumers)
+ * - Shell: separate from CMS editor to avoid edit affordances
+ */
+export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "Content Intelligence",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
+export default async function DashboardLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  if (!isAuthConfigured()) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-[var(--canvas)] p-8">
+        <div className="max-w-md rounded-lg border border-[var(--line)] bg-white p-6 text-center">
+          <h1 className="text-lg font-semibold text-[var(--ink)]">
+            Intelligence Dashboard not configured
+          </h1>
+          <p className="mt-2 text-sm text-[var(--muted)]">
+            Set AUTH_SECRET, ADMIN_PASSWORD_HASH, and ADMIN_EMAILS to enable operator
+            access. See .env.example.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  const session = await auth();
+  if (!session?.user?.email || !isAllowedAdminEmail(session.user.email)) {
+    redirect("/admin/login");
+  }
+
+  return <IntelligenceShell>{children}</IntelligenceShell>;
+}

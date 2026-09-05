@@ -1,0 +1,29 @@
+{
+  "batch": 2,
+  "phase": 10,
+  "description": "Controlled legacy → Product V1 migration batch 2",
+  "products": [
+    {
+      "id": "budget-standing-desk",
+      "category": "desks",
+      "reason": "Remaining rich desk specs/commerce used by standing-desks best list"
+    },
+    {
+      "id": "budget-ergonomic-chair",
+      "category": "chairs",
+      "reason": "Remaining rich chair used alongside already-migrated Branch in the same Best List"
+    },
+    {
+      "id": "monitor-light-bar",
+      "category": "accessories",
+      "reason": "Featured sparse accessory; lighting → accessories → lighting remap"
+    }
+  ],
+  "notes": {
+    "intentionallyLegacy": ["bamboo-writing-desk"],
+    "canonicalVsRuntime": {
+      "monitor-light-bar": "V1 accessories/subcategory monitor-light → adapter legacy category lighting"
+    },
+    "mixedSchemaCoverage": "flexispot-compact (V1) + bamboo-writing-desk (legacy)"
+  }
+}

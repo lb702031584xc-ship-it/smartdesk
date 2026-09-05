@@ -1,0 +1,78 @@
+{
+  "identity": {
+    "id": "single-vs-dual-monitor-arm",
+    "title": "Single vs Dual Monitor Arm for Small Desks",
+    "slug": "single-vs-dual-monitor-arm"
+  },
+  "classification": {
+    "type": "comparison",
+    "category": "monitors",
+    "subcategory": "monitor-arm",
+    "tags": [
+      "comparison",
+      "monitor-arm",
+      "small-space",
+      "desk-setup"
+    ]
+  },
+  "editorial": {
+    "summary": "Choose a single arm when one screen is enough; choose a dual arm when two displays need to leave the desktop on a small apartment desk.",
+    "audience": [
+      "remote workers",
+      "apartment desks"
+    ],
+    "intent": "commercial"
+  },
+  "seo": {
+    "metaTitle": "Single vs Dual Monitor Arm for Small Desks",
+    "metaDescription": "Compare a compact single monitor arm with a dual monitor arm for small home-office desks—footprint, screen count, and when each wins.",
+    "primaryKeyword": "single vs dual monitor arm",
+    "secondaryKeywords": [
+      "monitor arm small desk",
+      "dual monitor arm apartment"
+    ],
+    "canonical": "/blog/single-vs-dual-monitor-arm",
+    "noindex": false
+  },
+  "products": {
+    "primary": [
+      {
+        "productId": "monitor-arm-dual",
+        "rank": 1,
+        "role": "best-overall",
+        "summary": "Legacy catalog pick when two screens need to leave a shallow desktop."
+      },
+      {
+        "productId": "single-monitor-arm",
+        "rank": 2,
+        "role": "best-for-beginners",
+        "summary": "Product V1 generic single-arm class when one display is enough."
+      }
+    ],
+    "winnerProductId": "monitor-arm-dual",
+    "winnerReason": "For most small desks that already run two monitors, a dual arm recovers more usable surface in one upgrade. Pick the single arm when you only need one screen raised."
+  },
+  "commerce": {
+    "affiliateEnabled": true,
+    "disclosure": true,
+    "ctaStyle": "amazon"
+  },
+  "media": {
+    "featuredImage": "",
+    "ogImage": "",
+    "pinterestImage": ""
+  },
+  "publishing": {
+    "status": "published",
+    "publishedAt": "2026-08-17",
+    "updatedAt": "2026-08-17",
+    "author": "smartdesk-team"
+  },
+  "relationships": {
+    "parentTopic": "monitors",
+    "relatedArticles": [
+      "best-monitor-setup-small-home-office",
+      "single-monitor-arm-review"
+    ]
+  }
+}

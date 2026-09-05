@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "id": "space-saving-standing-desk",
+  "identity": {
+    "name": "Vivo NarrowLift Compact Standing Desk",
+    "brand": "Vivo",
+    "category": "desks"
+  },
+  "classification": {
+    "subcategory": "standing-desk"
+  },
+  "editorial": {
+    "verdict": "Best space-saving standing desk when footprint matters more than desktop square footage.",
+    "description": "A truly space-saving sit-stand desk built for studio apartments and tight corners where a 48-inch frame still feels oversized.",
+    "bestFor": [
+      "Studio apartments and tight corners that need sit-stand without a full-width desk"
+    ],
+    "notFor": [
+      "Anyone who needs a wide dual-monitor layout or lots of surface for notebooks and docks",
+      "Buyers who prefer a larger compact desk like FlexiSpot for everyday multi-device work"
+    ],
+    "pros": [
+      "Narrower footprint than a standard compact desk",
+      "True sit-stand lift for studio corners and alcoves",
+      "Shallow depth keeps walkways clearer in tiny rooms"
+    ],
+    "cons": [
+      "Too small for dual large monitors without an arm",
+      "Limited desktop real estate for writing + keyboard sprawl",
+      "Not ideal if you need a wide spread for peripherals"
+    ],
+    "featured": false
+  },
+  "commerce": {
+    "asin": "B0EXAMPLESPACE1",
+    "amazonUrl": "https://www.amazon.com/s?k=narrow+compact+standing+desk+small+apartment",
+    "priceRange": "From $199",
+    "lastChecked": "2026-08-17"
+  },
+  "media": {
+    "primary": "/products/desk.svg",
+    "gallery": [
+      "/products/desk.svg"
+    ]
+  },
+  "specs": {
+    "desk": {
+      "adjustable": true,
+      "heightRangeIn": "29–47",
+      "motor": "Electric",
+      "weightCapacityLb": 132,
+      "widthIn": 40,
+      "depthIn": 20,
+      "assemblyTimeMin": 55
+    }
+  },
+  "review": {
+    "rating": 4.5,
+    "summary": "A truly space-saving sit-stand desk built for studio apartments and tight corners where a 48-inch frame still feels oversized."
+  },
+  "relationships": {
+    "relatedProducts": [
+      "flexispot-compact"
+    ]
+  }
+}

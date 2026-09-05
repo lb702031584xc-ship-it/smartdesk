@@ -1,0 +1,39 @@
+{
+  "batch": "final",
+  "phase": 10,
+  "description": "Final controlled legacy → Product V1 migration; completes production catalog",
+  "products": [
+    {
+      "id": "wall-folding-desk",
+      "category": "desks",
+      "reason": "Sparse folding desk; flexispot-compact relationship target"
+    },
+    {
+      "id": "wall-shelf-organizer",
+      "category": "accessories",
+      "reason": "Sparse storage accessory; storage → accessories → storage remap"
+    },
+    {
+      "id": "bamboo-writing-desk",
+      "category": "desks",
+      "reason": "Mixed-schema comparison retirement; standing-desk-vs-writing-desk + best-small-desks"
+    }
+  ],
+  "notes": {
+    "migrationOrder": [
+      "wall-folding-desk",
+      "wall-shelf-organizer",
+      "bamboo-writing-desk"
+    ],
+    "mixedSchemaRetirement": {
+      "before": "standing-desk-vs-writing-desk: flexispot-compact (V1) + bamboo-writing-desk (legacy)",
+      "after": "standing-desk-vs-writing-desk: flexispot-compact (V1) + bamboo-writing-desk (V1)",
+      "legacyLoaderRemovedInNextPhase": false
+    },
+    "catalogAfter": {
+      "productV1": 13,
+      "legacyProduct": 0,
+      "totalIds": 13
+    }
+  }
+}

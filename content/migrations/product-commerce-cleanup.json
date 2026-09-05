@@ -1,0 +1,44 @@
+{
+  "_comment": "Operator-reviewed Product commerce cleanup mappings only. Do not add guessed ASINs.",
+  "phase": 26,
+  "executedAt": "2026-08-19T14:21:09.266Z",
+  "actor": "system:phase26-commerce-cleanup",
+  "mappings": [
+    {
+      "productId": "flexispot-compact",
+      "oldAsin": "B0EXAMPLEFLEX1",
+      "action": "cleared",
+      "newAsin": null,
+      "reason": "Known development placeholder; no verified replacement available",
+      "publishedRefs": 4,
+      "revisionCreated": true
+    },
+    {
+      "productId": "space-saving-standing-desk",
+      "oldAsin": "B0EXAMPLESPACE1",
+      "action": "cleared",
+      "newAsin": null,
+      "reason": "Known development placeholder; no verified replacement available",
+      "publishedRefs": 1,
+      "revisionCreated": true
+    },
+    {
+      "productId": "budget-standing-desk",
+      "oldAsin": "B0EXAMPLEBUDGET1",
+      "action": "cleared",
+      "newAsin": null,
+      "reason": "Known development placeholder; no verified replacement available",
+      "publishedRefs": 1,
+      "revisionCreated": true
+    },
+    {
+      "productId": "branch-ergonomic-chair",
+      "oldAsin": "B0EXAMPLEBRANCH1",
+      "action": "cleared",
+      "newAsin": null,
+      "reason": "Known development placeholder; no verified replacement available",
+      "publishedRefs": 1,
+      "revisionCreated": true
+    }
+  ]
+}

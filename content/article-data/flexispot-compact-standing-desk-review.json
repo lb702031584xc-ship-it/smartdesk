@@ -1,0 +1,80 @@
+{
+  "identity": {
+    "id": "flexispot-compact-standing-desk-review",
+    "title": "FlexiSpot Compact Standing Desk Review",
+    "slug": "flexispot-compact-standing-desk-review"
+  },
+  "classification": {
+    "type": "review",
+    "category": "desks",
+    "tags": ["standing desk", "review", "flexispot"]
+  },
+  "editorial": {
+    "summary": "We tested this desk as a primary workstation in a spare-room setup with one monitor on an arm and a compact ergonomic chair.",
+    "intent": "commercial"
+  },
+  "seo": {
+    "metaDescription": "An honest review of the FlexiSpot compact standing desk for apartment offices—stability, noise, assembly, and who should buy it.",
+    "noindex": false
+  },
+  "products": {
+    "primary": [
+      {
+        "productId": "flexispot-compact",
+        "summary": "A compact electric standing desk that feels more premium than its price suggests, with a few cable-management compromises.",
+        "verdict": "Buy it if you want sit-stand flexibility without a bulky frame. Skip it if you need a polished built-in cable system out of the box."
+      }
+    ]
+  },
+  "commerce": {
+    "affiliateEnabled": true,
+    "disclosure": true,
+    "ctaStyle": "amazon"
+  },
+  "media": {
+    "featuredImage": ""
+  },
+  "publishing": {
+    "status": "published",
+    "publishedAt": "2026-08-13",
+    "updatedAt": "2026-08-13",
+    "author": "SmartDeskSetup Editorial",
+    "featured": true
+  },
+  "relationships": {
+    "relatedLinks": [
+      {
+        "title": "Best Standing Desks for Small Apartments",
+        "href": "/blog/best-standing-desks-small-apartments",
+        "description": "See how this desk ranks against budget and wall-mounted alternatives."
+      },
+      {
+        "title": "Standing Desk vs Writing Desk",
+        "href": "/blog/standing-desk-vs-writing-desk",
+        "description": "Not sure you need sit-stand? Compare both approaches."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "Is this desk quiet enough for shared apartments?",
+      "answer": "The motor is audible but not disruptive—more like a short appliance hum than a grind. Fine for most shared living spaces."
+    },
+    {
+      "question": "Can renters assemble it alone?",
+      "answer": "Yes, though a second person helps when flipping the frame. Set aside 60–90 minutes and clear floor space first."
+    },
+    {
+      "question": "Does it work with a monitor arm?",
+      "answer": "Yes. A clamp arm is one of the best upgrades because it frees depth on a compact top."
+    }
+  ],
+  "review": {
+    "ratingCategories": [
+      { "label": "Stability", "score": 4.6 },
+      { "label": "Space efficiency", "score": 4.8 },
+      { "label": "Ease of use", "score": 4.7 },
+      { "label": "Value", "score": 4.5 }
+    ]
+  }
+}

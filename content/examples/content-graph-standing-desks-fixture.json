@@ -1,0 +1,94 @@
+{
+  "_comment": "Phase 28 Content Graph fixture — standing desks cluster (IDs only).",
+  "articles": [
+    {
+      "identity": {
+        "id": "cg-best-standing-desks",
+        "title": "Content Graph Fixture: Best Standing Desks",
+        "slug": "cg-best-standing-desks"
+      },
+      "classification": {
+        "type": "best-list",
+        "category": "desks",
+        "tags": ["fixture", "content-graph"]
+      },
+      "editorial": {
+        "summary": "Fixture best-list for standing desk Content Graph.",
+        "audience": ["editors"],
+        "intent": "commercial"
+      },
+      "seo": {
+        "metaTitle": "CG Best Standing Desks Fixture",
+        "metaDescription": "Internal Content Graph fixture.",
+        "noindex": true
+      },
+      "products": {
+        "primary": [
+          {
+            "productId": "flexispot-compact",
+            "rank": 1,
+            "role": "best-overall"
+          },
+          {
+            "productId": "space-saving-standing-desk",
+            "rank": 2,
+            "role": "best-space-saving"
+          }
+        ]
+      },
+      "publishing": {
+        "status": "draft",
+        "updatedAt": "2026-08-21",
+        "author": "smartdesk-team"
+      },
+      "relationships": {
+        "parentTopic": "standing-desks",
+        "relatedArticles": ["cg-desk-buying-guide"]
+      }
+    },
+    {
+      "identity": {
+        "id": "cg-desk-buying-guide",
+        "title": "Content Graph Fixture: Desk Buying Guide",
+        "slug": "cg-desk-buying-guide"
+      },
+      "classification": {
+        "type": "guide",
+        "category": "desks",
+        "tags": ["fixture", "content-graph"]
+      },
+      "editorial": {
+        "summary": "Fixture guide for standing desk Content Graph.",
+        "audience": ["editors"],
+        "intent": "informational"
+      },
+      "seo": {
+        "metaTitle": "CG Desk Buying Guide Fixture",
+        "metaDescription": "Internal Content Graph fixture.",
+        "noindex": true
+      },
+      "products": {
+        "primary": [
+          {
+            "productId": "flexispot-compact",
+            "rank": 1
+          }
+        ]
+      },
+      "publishing": {
+        "status": "draft",
+        "updatedAt": "2026-08-21",
+        "author": "smartdesk-team"
+      },
+      "relationships": {
+        "parentTopic": "standing-desks",
+        "relatedArticles": ["cg-best-standing-desks"]
+      }
+    }
+  ],
+  "expected": {
+    "topicId": "standing-desks",
+    "productId": "flexispot-compact",
+    "minArticlesForProduct": 2
+  }
+}

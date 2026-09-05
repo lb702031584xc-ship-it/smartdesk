@@ -1,0 +1,29 @@
+{
+  "batch": 3,
+  "phase": 10,
+  "description": "Controlled legacy → Product V1 migration batch 3",
+  "products": [
+    {
+      "id": "space-saving-standing-desk",
+      "category": "desks",
+      "reason": "Remaining rich desk used by standing-desks best list"
+    },
+    {
+      "id": "space-saving-office-chair",
+      "category": "chairs",
+      "reason": "Remaining rich chair with real ASIN detail URL; chairs best list rank 3"
+    },
+    {
+      "id": "cable-tray-kit",
+      "category": "accessories",
+      "reason": "Sparse storage accessory; storage → accessories → storage remap"
+    }
+  ],
+  "notes": {
+    "intentionallyLegacy": ["bamboo-writing-desk", "wall-folding-desk", "wall-shelf-organizer"],
+    "canonicalVsRuntime": {
+      "cable-tray-kit": "V1 accessories/subcategory cable-management → adapter legacy category storage"
+    },
+    "mixedSchemaCoverage": "flexispot-compact (V1) + bamboo-writing-desk (legacy)"
+  }
+}

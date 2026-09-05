@@ -1,0 +1,64 @@
+{
+  "identity": {
+    "id": "article-v1-rich-capability-fixture",
+    "title": "Article V1 Rich Capability Fixture",
+    "slug": "article-v1-rich-capability-fixture"
+  },
+  "classification": {
+    "type": "guide",
+    "category": "monitors",
+    "tags": ["fixture", "migration-readiness"]
+  },
+  "editorial": {
+    "summary": "Non-production fixture for FAQ, related links, and guide adapter coverage.",
+    "audience": ["editors"],
+    "intent": "informational",
+    "methodology": "Fixture-only methodology string for adapter parity."
+  },
+  "seo": {
+    "metaTitle": "Article V1 Rich Capability Fixture",
+    "metaDescription": "Internal SmartDesk fixture for Phase 6 migration readiness.",
+    "primaryKeyword": "article schema fixture",
+    "secondaryKeywords": [],
+    "canonical": "",
+    "noindex": true
+  },
+  "products": {
+    "primary": []
+  },
+  "commerce": {
+    "affiliateEnabled": false,
+    "disclosure": true,
+    "ctaStyle": "amazon"
+  },
+  "media": {
+    "featuredImage": "/images/guide-placeholder.svg"
+  },
+  "publishing": {
+    "status": "draft",
+    "updatedAt": "2026-08-17",
+    "author": "smartdesk-team",
+    "featured": false
+  },
+  "relationships": {
+    "parentTopic": "monitors",
+    "relatedArticles": [],
+    "relatedLinks": [
+      {
+        "title": "Best Monitor Setup",
+        "href": "/blog/best-monitor-setup-small-home-office",
+        "description": "Fixture related link"
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "Is this a production article?",
+      "answer": "No. This fixture is draft and must never become a public route."
+    },
+    {
+      "question": "Where does FAQ structured data come from?",
+      "answer": "ArticleV1.faq adapts to runtime faq, then buildArticleJsonLd emits FAQPage."
+    }
+  ]
+}

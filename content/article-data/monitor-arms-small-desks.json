@@ -1,0 +1,29 @@
+{
+  "identity": {
+    "id": "monitor-arms-small-desks",
+    "title": "Monitor Arms and Risers That Save a Tiny Desk",
+    "slug": "monitor-arms-small-desks"
+  },
+  "classification": {
+    "type": "guide",
+    "category": "monitors",
+    "tags": ["monitor arm", "desk space", "ergonomics"]
+  },
+  "editorial": {
+    "intent": "informational"
+  },
+  "seo": {
+    "metaDescription": "Clamp mounts, single arms, and budget risers compared for apartment desks with limited surface area.",
+    "noindex": false
+  },
+  "commerce": {
+    "affiliateEnabled": true,
+    "disclosure": true,
+    "ctaStyle": "amazon"
+  },
+  "publishing": {
+    "status": "published",
+    "publishedAt": "2026-07-28",
+    "featured": true
+  }
+}

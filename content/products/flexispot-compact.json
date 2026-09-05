@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "flexispot-compact",
+  "identity": {
+    "name": "FlexiSpot Compact Standing Desk",
+    "brand": "FlexiSpot",
+    "category": "desks"
+  },
+  "classification": {
+    "subcategory": "standing-desk"
+  },
+  "editorial": {
+    "verdict": "Best sit-stand option for tight rooms when you want daily height changes without a bulky frame.",
+    "description": "A reliable electric desk that stays usable at full height without eating the whole wall.",
+    "bestFor": ["Most small apartments"],
+    "notFor": [
+      "Anyone who needs premium built-in cable management or a furniture-like solid-wood desk that never moves."
+    ],
+    "pros": [
+      "Compact width options",
+      "Smooth electric lift",
+      "Stable enough for dual monitors with an arm"
+    ],
+    "cons": ["Cable tray is basic", "Assembly takes an evening"],
+    "featured": true
+  },
+  "commerce": {
+    "asin": "B0EXAMPLEFLEX1",
+    "amazonUrl": "https://www.amazon.com/s?k=flexispot+standing+desk",
+    "priceRange": "From $229",
+    "lastChecked": "2026-08-17"
+  },
+  "media": {
+    "primary": "/products/desk.svg",
+    "gallery": ["/products/desk.svg"]
+  },
+  "specs": {
+    "desk": {
+      "adjustable": true,
+      "heightRangeIn": "29–48",
+      "motor": "Electric",
+      "weightCapacityLb": 154,
+      "widthIn": 48,
+      "depthIn": 24,
+      "assemblyTimeMin": 75
+    }
+  },
+  "review": {
+    "rating": 4.7,
+    "slug": "flexispot-compact-standing-desk-review",
+    "summary": "A reliable electric desk that stays usable at full height without eating the whole wall."
+  },
+  "relationships": {
+    "relatedProducts": ["bamboo-writing-desk", "wall-folding-desk"]
+  }
+}

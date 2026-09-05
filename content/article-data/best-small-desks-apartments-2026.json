@@ -1,0 +1,103 @@
+{
+  "identity": {
+    "id": "best-small-desks-apartments-2026",
+    "title": "Best Small Desks for Apartments in 2026",
+    "slug": "best-small-desks-apartments-2026"
+  },
+  "classification": {
+    "type": "best-list",
+    "category": "desks",
+    "tags": [
+      "best small desk for apartment",
+      "small desk",
+      "apartment office",
+      "compact desk",
+      "best of"
+    ]
+  },
+  "editorial": {
+    "summary": "In an apartment, a desk has to earn its space. The best small desk for an apartment is stable enough for real work, shallow enough for a walkway, and calm enough to live next to a sofa or bed.",
+    "intent": "commercial",
+    "methodology": "We evaluated compact desks for apartments based on footprint, depth, stability during daily use, assembly reality in small rooms, and value. Prices and availability can change on Amazon."
+  },
+  "seo": {
+    "metaDescription": "Looking for the best small desk for an apartment? We ranked compact desks by footprint, stability, comfort, and everyday value for small home offices.",
+    "noindex": false
+  },
+  "products": {
+    "primary": [
+      {
+        "productId": "flexispot-compact",
+        "rank": 1,
+        "role": "best-overall",
+        "summary": "Best for most apartment workdays that need sit-stand flexibility."
+      },
+      {
+        "productId": "bamboo-writing-desk",
+        "rank": 2,
+        "role": "best-budget",
+        "summary": "Best simple fixed desk for people who want a lower-cost and calm workspace."
+      },
+      {
+        "productId": "wall-folding-desk",
+        "rank": 3,
+        "role": "best-space-saving",
+        "summary": "Best choice when the room needs to open back up after work."
+      }
+    ],
+    "winnerProductId": "flexispot-compact",
+    "winnerReason": "Best balance of footprint, sit-stand flexibility, and daily stability."
+  },
+  "commerce": {
+    "affiliateEnabled": true,
+    "disclosure": true,
+    "ctaStyle": "amazon"
+  },
+  "media": {
+    "featuredImage": "/images/articles/best-small-desks-apartments.jpg"
+  },
+  "publishing": {
+    "status": "published",
+    "publishedAt": "2026-08-17",
+    "updatedAt": "2026-08-17",
+    "author": "SmartDeskSetup Editorial",
+    "featured": true
+  },
+  "relationships": {
+    "relatedLinks": [
+      {
+        "title": "Best Standing Desks for Small Apartments",
+        "href": "/blog/best-standing-desks-small-apartments",
+        "description": "A deeper shortlist if sit-stand is your main priority."
+      },
+      {
+        "title": "FlexiSpot Compact Standing Desk Review",
+        "href": "/blog/flexispot-compact-standing-desk-review",
+        "description": "A full review of our Best Overall."
+      },
+      {
+        "title": "Standing Desk vs Writing Desk for Small Rooms",
+        "href": "/blog/standing-desk-vs-writing-desk",
+        "description": "Help deciding between sit-stand and fixed desks."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "What size is best for a small apartment desk?",
+      "answer": "Most apartments do well with a desk between 40 and 48 inches wide and about 20 to 24 inches deep. Prioritize leaving a clear walkway behind the chair."
+    },
+    {
+      "question": "Do I need a standing desk in a small apartment?",
+      "answer": "Not always. If you work long hours and want posture changes, a compact standing desk is worth it. If the room is mainly shared living space, a shallow fixed desk can be the smarter choice."
+    },
+    {
+      "question": "Can a small desk support two monitors?",
+      "answer": "Many can, especially with a monitor arm. Check weight capacity and avoid placing heavy screens on the far edge of a shallow desktop."
+    },
+    {
+      "question": "What should I buy first: desk or chair?",
+      "answer": "Buy the desk first if footprint is your biggest constraint. Then choose a chair that tucks under the desk and fits the remaining clearance."
+    }
+  ]
+}
