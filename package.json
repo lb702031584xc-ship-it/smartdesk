@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "npm run validate:catalog-commerce && next build --turbopack",
+    "build": "next build --turbopack",
+    "build:checked": "npm run validate:catalog-commerce && next build --turbopack",
     "start": "next start",
     "lint": "eslint",
     "validate:article-v1": "npx --yes tsx scripts/validate-article-v1.ts",
