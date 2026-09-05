@@ -2,9 +2,11 @@ import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { compare } from "bcryptjs";
 import { isAllowedAdminEmail } from "@/lib/admin/auth-config";
+import { normalizeEnvValue } from "@/lib/env";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   trustHost: true,
+  secret: normalizeEnvValue(process.env.AUTH_SECRET),
   pages: {
     signIn: "/admin/login",
   },
@@ -30,7 +32,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           return null;
         }
 
-        const hash = process.env.ADMIN_PASSWORD_HASH;
+        const hash = normalizeEnvValue(process.env.ADMIN_PASSWORD_HASH);
         if (!hash) {
           return null;
         }

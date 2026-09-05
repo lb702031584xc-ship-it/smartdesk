@@ -1,6 +1,7 @@
 import { lookup } from "node:dns/promises";
 import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
+import { getDatabaseUrl } from "@/lib/env";
 import * as schema from "./schema";
 
 let client: ReturnType<typeof postgres> | null = null;
@@ -8,7 +9,7 @@ let dbInstance: ReturnType<typeof drizzle<typeof schema>> | null = null;
 let initPromise: Promise<ReturnType<typeof drizzle<typeof schema>>> | null = null;
 
 export function isDatabaseConfigured(): boolean {
-  return Boolean(process.env.DATABASE_URL?.trim());
+  return Boolean(getDatabaseUrl());
 }
 
 async function createPostgresClient(url: string) {
@@ -47,7 +48,7 @@ async function createPostgresClient(url: string) {
 }
 
 export async function getDb() {
-  const url = process.env.DATABASE_URL?.trim();
+  const url = getDatabaseUrl();
   if (!url) {
     throw new Error(
       "[db] DATABASE_URL is not configured. Set CONTENT_STORE=filesystem or provide DATABASE_URL.",

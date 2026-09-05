@@ -8,10 +8,12 @@
  * Do not silently fall back to filesystem in production when database mode is requested.
  */
 
+import { getDatabaseUrl, normalizeEnvValue } from "@/lib/env";
+
 export type ContentStoreMode = "filesystem" | "database";
 
 export function getContentStoreMode(): ContentStoreMode {
-  const explicit = process.env.CONTENT_STORE?.trim().toLowerCase();
+  const explicit = normalizeEnvValue(process.env.CONTENT_STORE)?.toLowerCase();
   if (explicit === "database" || explicit === "filesystem") {
     return explicit;
   }
@@ -19,7 +21,7 @@ export function getContentStoreMode(): ContentStoreMode {
 }
 
 export function isDatabaseContentStore(): boolean {
-  return getContentStoreMode() === "database" && Boolean(process.env.DATABASE_URL?.trim());
+  return getContentStoreMode() === "database" && Boolean(getDatabaseUrl());
 }
 
 /**

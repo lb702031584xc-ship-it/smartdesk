@@ -4,9 +4,10 @@
  */
 
 import type { EditorialWorkflowRole } from "@/types/editorial-workflow";
+import { normalizeEnvValue } from "@/lib/env";
 
 export function getAdminEmails(): string[] {
-  const raw = process.env.ADMIN_EMAILS ?? "";
+  const raw = normalizeEnvValue(process.env.ADMIN_EMAILS) ?? "";
   return raw
     .split(",")
     .map((e) => e.trim().toLowerCase())
@@ -56,8 +57,8 @@ export function hasEditorialWorkflowRole(
 
 export function isAuthConfigured(): boolean {
   return Boolean(
-    process.env.AUTH_SECRET &&
-      process.env.ADMIN_PASSWORD_HASH &&
-      process.env.ADMIN_EMAILS,
+    normalizeEnvValue(process.env.AUTH_SECRET) &&
+      normalizeEnvValue(process.env.ADMIN_PASSWORD_HASH) &&
+      normalizeEnvValue(process.env.ADMIN_EMAILS),
   );
 }

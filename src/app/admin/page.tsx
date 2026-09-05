@@ -5,7 +5,26 @@ import { loadRefreshQueueData } from "@/lib/editorial/refresh-loader";
 import { loadProductMaintenanceQueueData } from "@/lib/editorial/product-maintenance-loader";
 
 export default async function AdminHomePage() {
-  const stats = await getAdminOverviewStats();
+  let stats;
+  try {
+    stats = await getAdminOverviewStats();
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Unknown database error";
+    return (
+      <div className="rounded-lg border border-red-200 bg-red-50 p-6">
+        <h1 className="text-lg font-semibold text-red-950">Admin could not load content</h1>
+        <p className="mt-2 text-sm text-red-900">
+          The server failed while reading the content store. Check Vercel Production env:
+          <code className="mx-1 rounded bg-white px-1">CONTENT_STORE=database</code>
+          and
+          <code className="mx-1 rounded bg-white px-1">DATABASE_URL</code>
+          (no wrapping quotes, no leading/trailing spaces), then Redeploy.
+        </p>
+        <p className="mt-3 break-all font-mono text-xs text-red-800">{message}</p>
+      </div>
+    );
+  }
+
   let refreshCounts = null;
   let maintenanceCounts = null;
   try {
