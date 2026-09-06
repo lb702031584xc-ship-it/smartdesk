@@ -491,9 +491,11 @@ export async function submitAIAssistanceFeedbackAction(input: {
 
 /**
  * Phase 46 — admin-only Evaluation Dataset CSV export (not a training dataset).
+ * Optional filters mirror the Quality Analytics page cohorts.
  */
 export async function exportEvaluationDatasetAction(
   mode: "summary" | "detailed" = "summary",
+  filters: import("@/types/ai-evaluation").EvaluationDatasetFilters = {},
 ): Promise<
   | { success: true; csv: string; filename: string }
   | { success: false; error: string; message: string }
@@ -512,7 +514,7 @@ export async function exportEvaluationDatasetAction(
     buildEvaluationExportCsv,
   } = await import("@/lib/ai-evaluation");
   try {
-    const records = await buildEvaluationDataset({}, 500);
+    const records = await buildEvaluationDataset(filters ?? {}, 500);
     const csv = buildEvaluationExportCsv(records, mode);
     const stamp = new Date().toISOString().slice(0, 10);
     return {

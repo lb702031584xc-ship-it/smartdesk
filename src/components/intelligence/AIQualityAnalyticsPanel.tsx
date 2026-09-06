@@ -176,7 +176,14 @@ export function AIQualityAnalyticsPanel({
           {analytics.metricDefinitions.lowSample}
         </p>
         <div className="mt-4">
-          <EvaluationExportButtons />
+          <EvaluationExportButtons
+            filters={{
+              timeRange: active.range,
+              assistanceType: active.type,
+              disposition: active.disposition,
+              reason: active.reason,
+            }}
+          />
         </div>
       </IntelligenceSection>
 

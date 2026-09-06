@@ -5,19 +5,24 @@ import {
   exportEvaluationDatasetAction,
   materializeEvaluationSnapshotsAction,
 } from "@/lib/admin/actions";
+import type { EvaluationDatasetFilters } from "@/types/ai-evaluation";
 
 /**
  * Admin-only Evaluation Dataset export (summary CSV by default).
  * Terminology: Evaluation Export — not training dataset.
  */
-export function EvaluationExportButtons() {
+export function EvaluationExportButtons({
+  filters = {},
+}: {
+  filters?: EvaluationDatasetFilters;
+}) {
   const [pending, startTransition] = useTransition();
   const [message, setMessage] = useState<string | null>(null);
 
   function download(mode: "summary" | "detailed") {
     setMessage(null);
     startTransition(async () => {
-      const result = await exportEvaluationDatasetAction(mode);
+      const result = await exportEvaluationDatasetAction(mode, filters);
       if (!result.success) {
         setMessage(result.message);
         return;
