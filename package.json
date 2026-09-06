@@ -66,7 +66,8 @@
     "validate:editorial-tasks": "npx --yes tsx scripts/validate-editorial-tasks.ts",
     "validate:ai-context": "npx --yes tsx scripts/validate-ai-context.ts",
     "validate:ai-operational-intelligence": "npx --yes tsx scripts/validate-ai-operational-intelligence.ts",
-    "validate:ai-feedback": "npx --yes tsx scripts/validate-ai-feedback.ts"
+    "validate:ai-feedback": "npx --yes tsx scripts/validate-ai-feedback.ts",
+    "validate:ai-evaluation": "npx --yes tsx scripts/validate-ai-evaluation.ts"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

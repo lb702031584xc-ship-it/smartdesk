@@ -1,11 +1,12 @@
 /**
- * AI assistance persistence (Phase 43).
+ * AI assistance persistence (Phase 43 + Phase 46 generation metadata).
  * Separate Neon table — never stored inside ProductV1 / ArticleV1.
  */
 import { randomUUID } from "crypto";
 import { and, desc, eq, sql } from "drizzle-orm";
 import { getDb } from "@/lib/db/client";
 import { aiAssistanceOutputs } from "@/lib/db/schema";
+import { ensureAIEvaluationTables } from "@/lib/ai-evaluation-store";
 import type {
   AIAssistanceEntityType,
   AIAssistanceRecord,
@@ -33,9 +34,14 @@ export async function ensureAIAssistanceTables(): Promise<void> {
           reviewed_at timestamptz,
           suggestion_id text,
           task_id text,
+          generation_metadata text,
           created_at timestamptz DEFAULT now() NOT NULL,
           updated_at timestamptz DEFAULT now() NOT NULL
         )
+      `);
+      await db.execute(sql`
+        ALTER TABLE ai_assistance_outputs
+        ADD COLUMN IF NOT EXISTS generation_metadata text
       `);
       await db.execute(sql`
         CREATE INDEX IF NOT EXISTS ai_assistance_outputs_entity_idx
@@ -49,6 +55,7 @@ export async function ensureAIAssistanceTables(): Promise<void> {
         CREATE INDEX IF NOT EXISTS ai_assistance_outputs_created_at_idx
           ON ai_assistance_outputs (created_at)
       `);
+      await ensureAIEvaluationTables();
     })().catch((error) => {
       tablesReady = null;
       throw error;
@@ -73,6 +80,7 @@ function toRecord(
     reviewedAt: row.reviewedAt ? row.reviewedAt.toISOString() : null,
     suggestionId: row.suggestionId ?? null,
     taskId: row.taskId ?? null,
+    generationMetadata: row.generationMetadata ?? null,
     createdAt: row.createdAt.toISOString(),
     updatedAt: row.updatedAt.toISOString(),
   };
@@ -85,6 +93,7 @@ export type InsertAIAssistanceInput = {
   inputContext: string;
   output: string;
   createdBy: string;
+  generationMetadata?: string | null;
 };
 
 export async function insertAIAssistance(
@@ -107,6 +116,7 @@ export async function insertAIAssistance(
     reviewedAt: null,
     suggestionId: null,
     taskId: null,
+    generationMetadata: input.generationMetadata ?? null,
     createdAt: now,
     updatedAt: now,
   });

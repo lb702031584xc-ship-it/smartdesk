@@ -13,6 +13,7 @@ export type EditorialTaskEntityType = EditorialWorkflowEntityType | "topic";
 export type EditorialTaskSourceType =
   | "ai-recommendation"
   | "ai-suggestion"
+  | "ai-assistance"
   | "manual";
 
 export type EditorialTaskPriority = AIRecommendationPriority;

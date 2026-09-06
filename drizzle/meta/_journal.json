@@ -50,6 +50,13 @@
       "when": 1787125000000,
       "tag": "0006_ai_assistance_feedback",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1787130000000,
+      "tag": "0007_ai_evaluation_snapshots",
+      "breakpoints": true
     }
   ]
 }

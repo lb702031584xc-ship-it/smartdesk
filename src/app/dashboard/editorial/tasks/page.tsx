@@ -14,6 +14,7 @@ const SOURCE_FILTERS: { id: EditorialTaskSourceType | "all"; label: string }[] =
     { id: "all", label: "All sources" },
     { id: "ai-recommendation", label: "AI Recommendation" },
     { id: "ai-suggestion", label: "AI Suggestion" },
+    { id: "ai-assistance", label: "AI Assistance" },
     { id: "manual", label: "Manual" },
   ];
 
@@ -26,6 +27,7 @@ export default async function EditorialTasksPage({ searchParams }: PageProps) {
   const sourceFilter =
     sourceParam === "ai-recommendation" ||
     sourceParam === "ai-suggestion" ||
+    sourceParam === "ai-assistance" ||
     sourceParam === "manual"
       ? sourceParam
       : "all";

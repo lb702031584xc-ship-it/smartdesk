@@ -66,6 +66,7 @@ export const TASK_PRIORITIES: readonly EditorialTaskPriority[] = [
 export const TASK_SOURCE_TYPES: readonly EditorialTaskSourceType[] = [
   "ai-recommendation",
   "ai-suggestion",
+  "ai-assistance",
   "manual",
 ] as const;
 
@@ -128,6 +129,7 @@ export function validateCreateTaskInput(
   if (
     sourceType !== "ai-recommendation" &&
     sourceType !== "ai-suggestion" &&
+    sourceType !== "ai-assistance" &&
     sourceType !== "manual"
   ) {
     return { ok: false, error: "INVALID_INPUT", message: "Invalid sourceType." };

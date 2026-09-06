@@ -489,6 +489,81 @@ export async function submitAIAssistanceFeedbackAction(input: {
   return { success: true };
 }
 
+/**
+ * Phase 46 — admin-only Evaluation Dataset CSV export (not a training dataset).
+ */
+export async function exportEvaluationDatasetAction(
+  mode: "summary" | "detailed" = "summary",
+): Promise<
+  | { success: true; csv: string; filename: string }
+  | { success: false; error: string; message: string }
+> {
+  try {
+    await requireAdmin();
+  } catch {
+    return {
+      success: false,
+      error: "INVALID_INPUT",
+      message: "Your admin session has expired. Sign in again.",
+    };
+  }
+  const {
+    buildEvaluationDataset,
+    buildEvaluationExportCsv,
+  } = await import("@/lib/ai-evaluation");
+  try {
+    const records = await buildEvaluationDataset({}, 500);
+    const csv = buildEvaluationExportCsv(records, mode);
+    const stamp = new Date().toISOString().slice(0, 10);
+    return {
+      success: true,
+      csv,
+      filename: `smartdesk-evaluation-export-${mode}-${stamp}.csv`,
+    };
+  } catch {
+    return {
+      success: false,
+      error: "EXPORT_FAILED",
+      message: "Failed to build evaluation export.",
+    };
+  }
+}
+
+/**
+ * Phase 46 — materialize evaluation snapshots for current assistances (append-only).
+ */
+export async function materializeEvaluationSnapshotsAction(): Promise<
+  | { success: true; count: number }
+  | { success: false; error: string; message: string }
+> {
+  try {
+    await requireAdmin();
+  } catch {
+    return {
+      success: false,
+      error: "INVALID_INPUT",
+      message: "Your admin session has expired. Sign in again.",
+    };
+  }
+  const { buildEvaluationDataset, materializeEvaluationSnapshot } =
+    await import("@/lib/ai-evaluation");
+  try {
+    const records = await buildEvaluationDataset({}, 200);
+    let count = 0;
+    for (const record of records) {
+      const result = await materializeEvaluationSnapshot(record.assistanceId);
+      if (result.success) count += 1;
+    }
+    return { success: true, count };
+  } catch {
+    return {
+      success: false,
+      error: "MATERIALIZE_FAILED",
+      message: "Failed to materialize evaluation snapshots.",
+    };
+  }
+}
+
 function workflowSessionExpired(): WorkflowResult {
   return {
     success: false,

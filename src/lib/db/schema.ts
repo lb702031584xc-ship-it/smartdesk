@@ -230,6 +230,8 @@ export const aiAssistanceOutputs = pgTable(
     reviewedAt: timestamp("reviewed_at", { withTimezone: true }),
     suggestionId: text("suggestion_id"),
     taskId: text("task_id"),
+    /** Phase 46 — JSON generation provenance; null = not-recorded (legacy rows). */
+    generationMetadata: text("generation_metadata"),
     createdAt: timestamp("created_at", { withTimezone: true })
       .notNull()
       .defaultNow(),
@@ -307,3 +309,27 @@ export const aiAssistanceFeedbackEvents = pgTable(
 
 export type AIAssistanceFeedbackEventRow =
   typeof aiAssistanceFeedbackEvents.$inferSelect;
+
+/**
+ * Phase 46 — materialized evaluation snapshots (versioned JSON).
+ * Live analytics can build without this table; exports may materialize.
+ */
+export const aiEvaluationSnapshots = pgTable(
+  "ai_evaluation_snapshots",
+  {
+    id: text("id").primaryKey(),
+    assistanceId: text("assistance_id").notNull(),
+    snapshotVersion: integer("snapshot_version").notNull(),
+    snapshotJson: text("snapshot_json").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    index("ai_evaluation_snapshots_assistance_idx").on(table.assistanceId),
+    index("ai_evaluation_snapshots_created_at_idx").on(table.createdAt),
+    index("ai_evaluation_snapshots_version_idx").on(table.snapshotVersion),
+  ],
+);
+
+export type AIEvaluationSnapshotRow = typeof aiEvaluationSnapshots.$inferSelect;

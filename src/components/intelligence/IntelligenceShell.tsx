@@ -16,6 +16,7 @@ const links = [
   { href: "/dashboard/intelligence/ai", label: "AI" },
   { href: "/dashboard/intelligence/ai-assistance", label: "Assistance" },
   { href: "/dashboard/intelligence/ai-operations", label: "AI Ops" },
+  { href: "/dashboard/intelligence/ai-evaluation", label: "Evaluation" },
   { href: "/dashboard/intelligence/recommendations", label: "Recommendations" },
 ];
 

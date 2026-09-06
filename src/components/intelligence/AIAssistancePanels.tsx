@@ -213,11 +213,23 @@ function AssistanceFeedbackForm({
       {existing ? (
         <p className="mt-2 text-xs text-[var(--subtle)]">
           Current: {existing.disposition} · {existing.reason}
-          {existing.note ? ` · “${existing.note}”` : ""}
+          {existing.note ? ` · “${existing.note}”` : ""}{" "}
+          <a
+            href={`/dashboard/intelligence/ai-evaluation/${assistanceId}`}
+            className="underline-offset-2 hover:underline"
+          >
+            View evaluation trace
+          </a>
         </p>
       ) : (
         <p className="mt-2 text-xs text-[var(--subtle)]">
-          No feedback yet (not the same as rejected).
+          No feedback yet (not the same as rejected).{" "}
+          <a
+            href={`/dashboard/intelligence/ai-evaluation/${assistanceId}`}
+            className="underline-offset-2 hover:underline"
+          >
+            Open evaluation record
+          </a>
         </p>
       )}
       <div className="mt-3 grid gap-2 sm:grid-cols-2">

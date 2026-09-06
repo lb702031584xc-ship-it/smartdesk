@@ -40,6 +40,8 @@ export type AIAssistanceRecord = {
   reviewedAt: string | null;
   suggestionId: string | null;
   taskId: string | null;
+  /** Phase 46 JSON provenance; null on legacy rows → not-recorded. */
+  generationMetadata: string | null;
   createdAt: string;
   updatedAt: string;
 };

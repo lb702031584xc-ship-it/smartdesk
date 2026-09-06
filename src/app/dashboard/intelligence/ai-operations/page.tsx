@@ -19,7 +19,13 @@ export default async function IntelligenceAIOperationsPage() {
         <p className="mt-2 text-sm text-[var(--muted)]">
           Observational feedback on assistance, suggestions, recommendations,
           tasks, and human evaluation. Unknown relationships stay unknown.
-          Nothing here changes prompts, scores, or canonical content.
+          Nothing here changes prompts, scores, or canonical content.{" "}
+          <Link
+            href="/dashboard/intelligence/ai-evaluation"
+            className="underline-offset-2 hover:underline"
+          >
+            Open Quality Analytics / Evaluation Dataset →
+          </Link>
         </p>
       </div>
 

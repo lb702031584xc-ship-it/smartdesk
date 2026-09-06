@@ -39,6 +39,7 @@ const STATUS_TONES: Record<
 const SOURCE_LABELS: Record<EditorialTaskSourceType, string> = {
   "ai-recommendation": "AI Recommendation",
   "ai-suggestion": "AI Suggestion",
+  "ai-assistance": "AI Assistance",
   manual: "Manual",
 };
 
@@ -146,6 +147,16 @@ function TaskCard({
             className="text-[var(--muted)] underline-offset-2 hover:underline"
           >
             Source AI suggestion — review separately
+          </Link>
+        </p>
+      ) : null}
+      {task.sourceType === "ai-assistance" && task.sourceId ? (
+        <p className="mt-1 text-xs">
+          <Link
+            href={`/dashboard/intelligence/ai-evaluation/${task.sourceId}`}
+            className="text-[var(--muted)] underline-offset-2 hover:underline"
+          >
+            Source AI assistance evaluation
           </Link>
         </p>
       ) : null}

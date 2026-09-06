@@ -315,13 +315,23 @@ export async function generateAssistance(input: {
       ? await enrichInternalLinkContext(context)
       : context;
   const draft = draftAssistanceFromContext(enriched, input.type);
+  const inputContext = serializeAIPromptContext(enriched);
+  const {
+    buildDefaultGenerationMetadata,
+    contextFingerprint,
+  } = await import("@/lib/ai-evaluation");
+  const contextHash = contextFingerprint(inputContext);
+  const generationMetadata = JSON.stringify(
+    buildDefaultGenerationMetadata(contextHash),
+  );
   const record = await insertAIAssistance({
     entityType: input.entityType,
     entityId: input.entityId,
     type: input.type,
-    inputContext: serializeAIPromptContext(enriched),
+    inputContext,
     output: JSON.stringify(draft),
     createdBy: input.createdBy.trim(),
+    generationMetadata,
   });
 
   return { success: true, assistance: await recordToViewModel(record) };
@@ -433,7 +443,7 @@ async function acceptViaGovernance(
   const task = await createEditorialTask({
     entityType: record.entityType,
     entityId: record.entityId,
-    sourceType: "manual",
+    sourceType: "ai-assistance",
     sourceId: record.id,
     title: draft.title,
     description: `${draft.body}\n\nSource assistance: ${record.id}`,
